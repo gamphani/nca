@@ -1,0 +1,586 @@
+<script>
+        function assignStartDate() {
+           document.getElementById("form_health_mnh_start_date").value = $("#start_date_picker").val();
+        }
+        function assignEndDate() {
+           document.getElementById("form_health_mnh_end_date").value = $("#end_date_picker").val();
+        }
+</script>	
+    <div class="page-content">
+    	<div class="row">
+		  <div class="col-md-2">
+		  	<div class="sidebar content-box" style="display: block;">
+                <ul class="nav">
+                    <!-- Main menu -->
+                    <li class="current"><a href="home/index"><i class="glyphicon glyphicon-home"></i>Home</a></li>
+
+                    <li class="dropdown">
+                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                           <i class="glyphicon glyphicon-tasks"></i> Data Entry <b class="caret"></b>
+                         </a>
+                         <!-- Sub menu -->
+                         <ul>
+                          <li> <%= link_to 'Resource and Finance', forms_new_path %></li>
+                           <li><%= link_to 'Gender Justice', form_gender_index_path %></li>
+                           <li><%= link_to 'Health', form_health_index_path %></li>
+  			   <li><%= link_to 'Monitoring and Evaluation', forms_new_path %></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                           <i class="glyphicon glyphicon-stats"></i> Reports <b class="caret"></b>
+                         </a>
+                         <!-- Sub menu -->
+                         <ul>
+                          <li> <%= link_to 'Resource and Finance', forms_new_path %></li>
+                           <li><%= link_to 'Gender Justice', forms_new_path %></li>
+                           <li><%= link_to 'Health', report_health_index_path %></li>
+  			   <li><%= link_to 'Monitoring and Evaluation', forms_new_path %></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                           <i class="glyphicon glyphicon-download-alt"></i> Documents <b class="caret"></b>
+                         </a>
+                         <!-- Sub menu -->
+                         <ul>
+                          <li> <%= link_to 'View', forms_new_path %></li>
+                           <li><%= link_to 'Upload', forms_new_path %></li>
+                        </ul>
+                    </li>
+
+
+                    <li><a href="tables.html"><i class="glyphicon glyphicon-list"></i>Partners</a></li>
+                </ul>
+             </div>
+		  </div>
+		  <div class="col-md-10">
+		  	<div class="row">
+
+		  	</div>
+
+		  	<div class="row">
+		  		<div class="col-md-12 panel-warning">
+		  			<div class="content-box-header panel-heading">
+	  					<div class="panel-title ">Health - Report</div>
+						
+						<div class="panel-options">
+							<a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
+							<a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
+						</div>
+		  			</div>
+		  			<div class="content-box-large box-with-header">
+			  			
+
+
+
+<!--form-->
+	
+	  					<div class="content-box-large">
+			  				
+			  				<div class="panel-body">
+
+
+
+
+
+
+									<fieldset>
+
+
+
+
+
+
+		  				<div class="panel-body">
+
+
+
+
+
+		  					<table class="table table-bordered">
+				              <tbody>
+				                <tr>
+				                  <td colspan = "2"><b>Service delivery <br> Number of deliveries conducted</b></td>
+				                </tr>
+				                <tr>
+				                  <td>SVD</td>
+				                  <td><%= @mnh.service_del_svd%></td>
+				                </tr>
+				                <tr>
+				                  <td>V/E</td>
+				                  <td><%= @mnh.service_del_ve%></td>
+				                </tr>
+
+						<tr>
+				                  <td>Maternal Deaths</td>
+				                  <td><%= @mnh.service_del_mart_death%></td>
+				                </tr>
+				                
+
+				                <tr>
+				                  <td colspan = "2"><b>Referals</b></td>
+				                </tr>
+
+<tr>
+				                  <td>Pre/eclampsia</td>
+				                  <td><%= @mnh.service_del_ref_eclampsia%></td>
+				                </tr>
+				                <tr>
+				                  <td>Obstructed labor/ prolonged labour</td>
+				                  <td><%= @mnh.service_del_ref_labour%></td>
+				                </tr>
+
+						<tr>
+				                  <td>APH/PPH</td>
+				                  <td><%= @mnh.service_del_ref_aph%></td>
+				                </tr>
+
+
+<tr>
+				                  <td>C/S</td>
+				                  <td><%= @mnh.service_del_ref_cs%></td>
+				                </tr>
+				                <tr>
+				                  <td>Other</td>
+				                  <td><%= @mnh.service_del_ref_other%></td>
+				                </tr>
+
+						<tr>
+				                  <td>Breech</td>
+				                  <td><%= @mnh.service_del_ref_breech%></td>
+				                </tr>
+
+
+						<tr>
+				                  <td>Twin deliveries</td>
+				                  <td><%= @mnh.service_del_ref_twins%></td>
+				                </tr>
+				                
+
+
+
+
+
+				                <tr>
+				                  <td colspan = "2"><b>Number of neonates<br> Live babies</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Male</td>
+				                  <td><%= @mnh.neonates_male %></td>
+				                </tr>
+				                <tr>
+				                  <td>Female</td>
+				                  <td><%= @mnh.neonates_female%></td>
+				                </tr>
+				                <tr>
+				                  <td colspan = "2"><b>NNDs</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Male</td>
+				                  <td><%= @mnh.nnd_male%></td>
+				                </tr>
+				                <tr>
+				                  <td>Female</td>
+				                  <td><%= @mnh.nnd_female%></td>
+				                </tr>
+				                <tr>
+				                  <td>Referals</td>
+				                  <td><%= @mnh.nnd_ref %></td>
+				                </tr>
+
+
+                                <tr>
+				                  <td>FSB</td>
+				                  <td><%= @mnh.nnd_fsb%></td>
+				                </tr>
+				                <tr>
+				                  <td>MSB</td>
+				                  <td><%= @mnh.nnd_msb%></td>
+				                </tr>
+				                <tr>
+				                  <td>Premature</td>
+				                  <td><%= @mnh.nnd_premature %></td>
+				                </tr>
+                                <tr>
+				                  <td>LBW</td>
+				                  <td><%= @mnh.nnd_lbw %></td>
+				                </tr>
+
+
+
+
+
+
+
+
+
+
+				                
+						<tr>
+				                  <td colspan = "2">&nbsp;</td>
+				                </tr>
+
+						<tr>
+				                  <td colspan = "2"><b>Conduct outreach clinics</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Pregnant mothers</td>
+				                  <td><%= @mnh.outreach_preg_mother %></td>
+				                </tr>
+
+
+                                <tr>
+				                  <td>Initial</td>
+				                  <td><%= @mnh.outreach_initial%></td>
+				                </tr>
+				                <tr>
+				                  <td>Subsequent</td>
+				                  <td><%= @mnh.outreach_subsequent%></td>
+				                </tr>
+				                <tr>
+				                  <td>2nd</td>
+				                  <td><%= @mnh.outreach_2nd %></td>
+				                </tr>
+                                <tr>
+				                  <td>3rd</td>
+				                  <td><%= @mnh.outreach_3rd %></td>
+				                </tr>
+				                <tr>
+				                  <td>4th</td>
+				                  <td><%= @mnh.outreach_4th %></td>
+				                </tr>
+
+
+						<tr>
+				                  <td colspan = "2"><b>Underfives</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Male</td>
+				                  <td><%= @mnh.outreach_male %></td>
+				                </tr>
+
+<tr>
+				                  <td>Initial</td>
+				                  <td><%= @mnh.outreach_underfive_initial%></td>
+				                </tr>
+				                <tr>
+				                  <td>Subsequent</td>
+				                  <td><%= @mnh.outreach_underfive_subsequent%></td>
+				                </tr>
+
+
+
+				                <tr>
+				                  <td>Female</td>
+				                  <td><%= @mnh.outreach_female %></td>
+				                </tr>
+						<tr>
+				                  <td colspan = "2"><b>Conduct community mobilization and awareness campaigns on male involvement in MNH issues</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Number of men participating</td>
+				                  <td><%= @mnh.mobilization_men %></td>
+				                </tr>
+						<tr>
+				                  <td colspan = "2"><b>Collaboration between CHAM and Govt</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Number of service level agreement signed</td>
+				                  <td><%= @mnh.slas %></td>
+				                </tr>
+				                <tr>
+				                  <td>Number of facilities involved in planning with districts</td>
+				                  <td><%= @mnh.facility_planning %></td>
+				                </tr>
+						<tr>
+				                  <td colspan = "2"><b>Capacity building <br>Infection prevention</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Male</td>
+				                  <td><%= @mnh.inf_prev_male %></td>
+				                </tr>
+				                <tr>
+				                  <td>Female</td>
+				                  <td><%= @mnh.inf_prev_female %></td>
+				                </tr>
+						<tr>
+				                  <td colspan = "2"><b>Exclusive Breast feeding</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Male</td>
+				                  <td><%= @mnh.exl_bf_male %></td>
+				                </tr>
+				                <tr>
+				                  <td>Female</td>
+				                  <td><%= @mnh.exl_bf_female %></td>
+				                </tr>
+
+				        <tr>
+				                  <td colspan = "2"><b>HAC Training</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Male</td>
+				                  <td><%= @mnh.hac_train_male%></td>
+				                </tr>
+				                <tr>
+				                  <td>Female</td>
+				                  <td><%= @mnh.hac_train_female %></td>
+				                </tr>
+						        
+						     <tr>
+				                  <td colspan = "2"><b>Menu Trainings</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Male</td>
+				                  <td><%= @mnh.menu_male%></td>
+				                </tr>
+				                <tr>
+				                  <td>Female</td>
+				                  <td><%= @mnh.menu_female %></td>
+				                </tr>
+<tr>
+				                  <td colspan = "2"><b>Annual Nutrition Event</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Male</td>
+				                  <td><%= @mnh.nutri_male%></td>
+				                </tr>
+				                <tr>
+				                  <td>Female</td>
+				                  <td><%= @mnh.nutri_female %></td>
+				                </tr>
+
+<tr>
+				                  <td colspan = "2"><b>Community Committees <br> Transport committee</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Male</td>
+				                  <td><%= @mnh.tpt_comm_male%></td>
+				                </tr>
+				                <tr>
+				                  <td>Female</td>
+				                  <td><%= @mnh.tpt_comm_female %></td>
+				                </tr>
+
+<tr>
+				                  <td colspan = "2"><b>Safemotherhood committee</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Male</td>
+				                  <td><%= @mnh.sf_mothood_male%></td>
+				                </tr>
+				                <tr>
+				                  <td>Female</td>
+				                  <td><%= @mnh.sf_mothood_female %></td>
+				                </tr>
+
+<tr>
+				                  <td colspan = "2"><b>HAC</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Male</td>
+				                  <td><%= @mnh.hac_male%></td>
+				                </tr>
+				                <tr>
+				                  <td>Female</td>
+				                  <td><%= @mnh.hac_female %></td>
+				                </tr>
+
+<tr>
+				                  <td colspan = "2"><b>Meetings <br> Number of Cluster meetings</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Male</td>
+				                  <td><%= @mnh.cluster_male%></td>
+				                </tr>
+				                <tr>
+				                  <td>Female</td>
+				                  <td><%= @mnh.cluster_female %></td>
+				                </tr>
+
+
+                                <tr>
+				                  <td colspan = "2"><b>Number of DEC meetings</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Male</td>
+				                  <td><%= @mnh.dec_male%></td>
+				                </tr>
+				                <tr>
+				                  <td>Female</td>
+				                  <td><%= @mnh.dec_female %></td>
+				                </tr>
+
+				                <tr>
+				                  <td colspan = "2"><b>Number of skilled staff</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Doctors</td>
+				                  <td><%= @mnh.skilled_doc%></td>
+				                </tr>
+				                <tr>
+				                  <td>Clinicians</td>
+				                  <td><%= @mnh.skilled_cli %></td>
+				                </tr>
+				                <tr>
+				                  <td>Nurse midwives</td>
+				                  <td><%= @mnh.skilled_nur %></td>
+				                </tr>
+
+<tr>
+				                  <td colspan = "2"><b>Number of support staff</b></td>
+				                </tr>
+				                <tr>
+				                  <td>HSAs</td>
+				                  <td><%= @mnh.support_hsa%></td>
+				                </tr>
+				                <tr>
+				                  <td>PA</td>
+				                  <td><%= @mnh.support_PA %></td>
+				                </tr>
+				                <tr>
+				                  <td>HCW</td>
+				                  <td><%= @mnh.support_HCW %></td>
+				                </tr>
+                                <tr>
+				                  <td>Guard</td>
+				                  <td><%= @mnh.support_guard %></td>
+				                </tr>
+				                <tr>
+				                  <td>Drivers</td>
+				                  <td><%= @mnh.support_drv %></td>
+				                </tr>
+
+<tr>
+				                  <td colspan = "2"><b>Maintenance</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Vehicles</td>
+				                  <td><%= @mnh.maintenance_veh%></td>
+				                </tr>
+				                <tr>
+				                  <td>Motorcycle</td>
+				                  <td><%= @mnh.maintenance_mcycle %></td>
+				                </tr>
+				                <tr>
+				                  <td>Computer</td>
+				                  <td><%= @mnh.maintenance_comp %></td>
+				                </tr>
+                                <tr>
+				                  <td>Boat</td>
+				                  <td><%= @mnh.maintenance_boat %></td>
+				                </tr>
+				                <tr>
+				                  <td>Radio</td>
+				                  <td><%= @mnh.maintenance_rad %></td>
+				                </tr>
+
+<tr>
+				                  <td colspan = "2"><b>Water availability</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Running water</td>
+				                  <td><%= @mnh.water_run%></td>
+				                </tr>
+				                <tr>
+				                  <td>Borehole</td>
+				                  <td><%= @mnh.water_borehole %></td>
+				                </tr>
+				                <tr>
+				                  <td>Electricity</td>
+				                  <td><%= @mnh.water_elec %></td>
+				                </tr>
+                                <tr>
+				                  <td>Solar</td>
+				                  <td><%= @mnh.water_solar %></td>
+				                </tr>
+				                <tr>
+				                  <td>Torches</td>
+				                  <td><%= @mnh.water_torch %></td>
+				                </tr>
+
+
+
+<tr>
+				                  <td colspan = "2">&nbsp;</td>
+				                </tr>
+				                <tr>
+				                  <td>Demonstration Garden</td>
+				                  <td><%= @mnh.demo_garden%></td>
+				                </tr>
+				                <tr>
+				                  <td>Hearths</td>
+				                  <td><%= @mnh.hearth%></td>
+				                </tr>
+				                <tr>
+				                  <td>Waiting home for pregnant mothers</td>
+				                  <td><%= @mnh.preg_shelter %></td>
+				                </tr>
+
+
+
+<tr>
+				                  <td colspan = "2"><b>Monitoring visits</b></td>
+				                </tr>
+				                <tr>
+				                  <td>DHOs</td>
+				                  <td><%= @mnh.sup_DHO%></td>
+				                </tr>
+				                <tr>
+				                  <td>Health Coordinators</td>
+				                  <td><%= @mnh.sup_coord %></td>
+				                </tr>
+				                <tr>
+				                  <td>Focal persons</td>
+				                  <td><%= @mnh.sup_focal %></td>
+				                </tr>
+                                <tr>
+				                  <td>NCA</td>
+				                  <td><%= @mnh.sup_NCA %></td>
+				                </tr>
+				                <tr>
+				                  <td>Zone officers</td>
+				                  <td><%= @mnh.sup_zone %></td>
+				                </tr>
+
+
+
+				              </tbody>
+				            </table>
+		  				</div>
+
+
+
+
+								
+									</fieldset>
+
+			  				</div>
+			  			</div>
+	  				
+
+
+
+
+						<br /><br />
+					</div>
+		  		</div>
+		  	</div>
+
+		  </div>
+		</div>
+    </div>
+
+    <footer>
+         <div class="container">
+         
+            <div class="copy text-center">
+               Copyright 2015 <a href='#'>Compu Networks</a>
+            </div>
+            
+         </div>
+      </footer>
+

@@ -1,0 +1,144 @@
+ <script>
+        function assignStartDate() {
+           document.getElementById("report_start_date").value = $("#start_date_picker").val();
+        }
+        function assignEndDate() {
+           document.getElementById("report_end_date").value = $("#end_date_picker").val();
+        }
+</script>
+	
+    <div class="page-content">
+    	<div class="row">
+		  <div class="col-md-2">
+		  	<div class="sidebar content-box" style="display: block;">
+                <ul class="nav">
+                    <!-- Main menu -->
+                    <li class="current"><a href="index.html"><i class="glyphicon glyphicon-home"></i>Programs</a></li>
+
+
+                    <li class="dropdown">
+                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                           <i class="glyphicon glyphicon-tasks"></i> Forms <b class="caret"></b>
+                         </a>
+                         <!-- Sub menu -->
+                         <ul>
+                          <li> <%= link_to 'Resource and Finance', forms_new_path %></li>
+                           <li><%= link_to 'Gender Justice', forms_new_path %></li>
+                           <li><%= link_to 'Health', forms_new_path %></li>
+  			   <li><%= link_to 'Monitoring and Evaluation', forms_new_path %></li>
+                        </ul>
+                    </li>
+
+
+
+
+
+
+
+                    <li><a href="stats.html"><i class="glyphicon glyphicon-stats"></i>Reports</a></li>
+                    <li><a href="tables.html"><i class="glyphicon glyphicon-list"></i>Partners</a></li>
+                </ul>
+             </div>
+		  </div>
+		  <div class="col-md-10">
+		  	<div class="row">
+
+		  	</div>
+
+		  	<div class="row">
+		  		<div class="col-md-12 panel-warning">
+		  			<div class="content-box-header panel-heading">
+	  					<div class="panel-title ">Health - Reports</div>
+						
+						<div class="panel-options">
+							<a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
+							<a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
+						</div>
+		  			</div>
+		  			<div class="content-box-large box-with-header">
+<br><br>
+
+
+<%= form_for :report, :url => { :action => :mnh }      do |f| %>
+
+
+                                                                <!--form action="/forms/create" method="post"-->
+                                                                        <fieldset>
+
+                                                <div class="panel-body">
+
+
+
+
+
+<%= f.hidden_field :start_date, :value => "1900-01-01"%>
+<%= f.hidden_field :end_date, :value => "2013-12-31" %>
+
+
+
+ <table class="table table-bordered">
+<tbody>
+
+        <tr>
+                                                  <td>Select Start Date</td>
+                                                  <td><div class="bfh-datepicker" data-format="y-m-d" data-date="today" id="start_date_picker" onchange="assignStartDate()"></div></td>
+                                                </tr>
+                                                <tr>
+                                                  <td>Select End Date</td>
+                                                  <td><div class="bfh-datepicker" data-format="y-m-d" data-date="today" id="end_date_picker" onchange="assignEndDate()"></div></td>
+                                                </tr>
+<tr>
+<td>Select Report Type</td>
+<td>
+<select class="form-control" id="report">
+<option>MNH Activities</option>
+<option>Other</option>
+</select>
+</td>
+</tr>
+
+
+
+<tbody>
+</table>
+
+
+
+                                                                   </fieldset>
+                                                                
+                                                                        <div>
+
+                                                                                        <%= submit_tag "Generate", class:"btn btn-primary" %>
+                                                                        </div>
+                                                                <!--/form-->
+
+
+
+
+<!--/form-->
+  <% end %>
+
+
+
+						<br /><br />
+						<br /><br />
+					</div>
+		  		</div>
+		  	</div>
+
+		  	<div class="content-box-large">
+		  	</div>
+		  </div>
+		</div>
+    </div>
+
+    <footer>
+         <div class="container">
+         
+            <div class="copy text-center">
+               Copyright 2015 <a href='#'>Compu Networks</a>
+            </div>
+            
+         </div>
+      </footer>
+

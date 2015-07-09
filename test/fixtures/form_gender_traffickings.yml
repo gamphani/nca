@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  trfk_cases_reported: MyString
+  trfk_cases_resolved: MyString
+  trfk_percent_reduction: MyString
+  trfk_incorporation_in_church: MyString
+  trfk_outreach: MyString
+  trfk_mobile_clinic: MyString
+  trfk_awareness: MyString
+  trfk_informal_justice: MyString
+  trfk_other_service_providers: MyString
+  trfk_rescued: MyString
+  trfk_court_rehabilitated: MyString
+  trfk_network_initiatives: MyString
+  trfk_interagency_meet: MyString
+  trfk_issues_raised: MyString
+
+two:
+  trfk_cases_reported: MyString
+  trfk_cases_resolved: MyString
+  trfk_percent_reduction: MyString
+  trfk_incorporation_in_church: MyString
+  trfk_outreach: MyString
+  trfk_mobile_clinic: MyString
+  trfk_awareness: MyString
+  trfk_informal_justice: MyString
+  trfk_other_service_providers: MyString
+  trfk_rescued: MyString
+  trfk_court_rehabilitated: MyString
+  trfk_network_initiatives: MyString
+  trfk_interagency_meet: MyString
+  trfk_issues_raised: MyString

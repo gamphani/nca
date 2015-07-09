@@ -1,0 +1,185 @@
+  	
+    <div class="page-content">
+    	<div class="row">
+		  <div class="col-md-2">
+		  	<div class="sidebar content-box" style="display: block;">
+                <ul class="nav">
+                    <!-- Main menu -->
+                    <li class="current"><a href="index.html"><i class="glyphicon glyphicon-home"></i>Programs</a></li>
+		    <li><%= link_to 'Forms', forms_new_path, class: 'glyphicon glyphicon-tasks' %></li>
+                    <li><a href="stats.html"><i class="glyphicon glyphicon-stats"></i>Reports</a></li>
+                    <li><a href="tables.html"><i class="glyphicon glyphicon-list"></i>Partners</a></li>
+                </ul>
+             </div>
+		  </div>
+		  <div class="col-md-10">
+		  	<div class="row">
+
+		  	</div>
+
+		  	<div class="row">
+		  		<div class="col-md-12 panel-warning">
+		  			<div class="content-box-header panel-heading">
+	  					<div class="panel-title ">Data Entry</div>
+						
+						<div class="panel-options">
+							<a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
+							<a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
+						</div>
+		  			</div>
+		  			<div class="content-box-large box-with-header">
+			  			
+
+
+
+<!--form-->
+	
+	  					<div class="content-box-large">
+			  				
+			  				<div class="panel-body">
+
+
+
+
+
+<%= form_for :forms, :url => { :action => :create }	 do |f| %>
+	
+
+			  					<!--form action="/forms/create" method="post"-->
+									<fieldset>
+
+
+
+                                                              <div>
+
+                                                                        <h4>Select Program</h4>
+<p>
+
+<%=f.select :program, "<option>Resource and Finance</option><option>Gender and Justice</option><option>Health</option><option>Monitoring and Evaluation</option>".html_safe %>
+</p>
+                                                                      
+                                                                </div>
+								
+<div>
+<%= f.date_select :article %>
+			  						<h4>Start Date</h4>
+<%= f.text_field :date, :class => "bfh-datepicker" %>
+
+
+			  						<p>
+			  							<div class="bfh-datepicker" data-format="y-m-d" data-date="today"></div>
+			  						</p>
+			  					</div>
+
+<div>
+			  						<h4>End Date</h4>
+			  						<p>
+			  							<div class="bfh-datepicker" data-format="y-m-d" data-date="today"></div>
+			  						</p>
+			  					</div>
+
+
+
+
+
+<div class="form-group">
+											<label>Forms of trafficking cases reported and documented.   </label>
+											
+
+<%= f.text_field :cases_reported, autofocus: true, class: "form-control" %>
+										</div>
+
+
+										<div class="form-group">
+											<label>Number of trafficking cases resolved by law enforcement agencies</label>
+											<%= f.text_field :resolved_law, class: "form-control" %>
+										</div>
+
+
+<div class="form-group">
+											<label>% reduction of GBV cases in the churches and communities</label>
+											<%= f.text_field :percentage, class: "form-control" %>
+										</div>
+
+
+
+	<div class="form-group">
+											<label>Number of churches incorporating human rights issues in their church services</label>
+											<%= f.text_field :churches, class: "form-control" %>
+										</div>
+<div class="form-group">
+											<label>Number of outreach meetings</label>
+											<%= f.text_field :outreach, class: "form-control" %>
+										</div>
+
+
+
+
+<div class="form-group">
+											<label>Number of legal mobile clinics</label>
+											<%= f.text_field :clinics, class: "form-control" %>
+										</div>
+
+<div class="form-group">
+											<label>Number of awareness campaigns</label>
+											<%= f.text_field :campaigns, class: "form-control" %>
+											
+										</div>
+<div class="form-group">
+											<label>Number of cases reported and resolved through informal justice systems</label>
+											<%= f.text_field :resolved_informal, class: "form-control" %>
+										</div>
+
+										
+										
+									</fieldset>
+									<div>
+ 
+										<div class="btn btn-primary">
+											<i class="fa fa-save"></i>
+											<%= submit_tag "Finish" %>
+										</div>
+									</div>
+								<!--/form-->
+  <% end %>
+
+			  				</div>
+			  			</div>
+	  				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						<br /><br />
+					</div>
+		  		</div>
+		  	</div>
+
+		  	<div class="content-box-large">
+		  	</div>
+		  </div>
+		</div>
+    </div>
+
+    <footer>
+         <div class="container">
+         
+            <div class="copy text-center">
+               Copyright 2015 <a href='#'>Compu Networks</a>
+            </div>
+            
+         </div>
+      </footer>
+

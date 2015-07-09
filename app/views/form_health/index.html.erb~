@@ -1,0 +1,81 @@
+  	
+    <div class="page-content">
+    	<div class="row">
+		  <div class="col-md-2">
+		  	<div class="sidebar content-box" style="display: block;">
+                <ul class="nav">
+                    <!-- Main menu -->
+                    <li class="current"><a href="index.html"><i class="glyphicon glyphicon-home"></i>Programs</a></li>
+
+
+                    <li class="dropdown">
+                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                           <i class="glyphicon glyphicon-tasks"></i> Forms <b class="caret"></b>
+                         </a>
+                         <!-- Sub menu -->
+                         <ul>
+                          <li> <%= link_to 'Resource and Finance', forms_new_path %></li>
+                           <li><%= link_to 'Gender Justice', forms_new_path %></li>
+                           <li><%= link_to 'Health', forms_new_path %></li>
+  			   <li><%= link_to 'Monitoring and Evaluation', forms_new_path %></li>
+                        </ul>
+                    </li>
+
+
+
+
+
+
+
+                    <li><a href="stats.html"><i class="glyphicon glyphicon-stats"></i>Reports</a></li>
+                    <li><a href="tables.html"><i class="glyphicon glyphicon-list"></i>Partners</a></li>
+                </ul>
+             </div>
+		  </div>
+		  <div class="col-md-10">
+		  	<div class="row">
+
+		  	</div>
+
+		  	<div class="row">
+		  		<div class="col-md-12 panel-warning">
+		  			<div class="content-box-header panel-heading">
+	  					<div class="panel-title ">Health - Form selection</div>
+						
+						<div class="panel-options">
+							<a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
+							<a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
+						</div>
+		  			</div>
+		  			<div class="content-box-large box-with-header">
+This is a Web Based Database Management System for the Norwegian Church Aid. It contains quarterly data and generates reports as required by the NCA's programs. Below are the areas for which this database system stores, analyses and generates reports.
+
+
+
+						<br /><br />
+						<br /><br />
+<ul>
+<li><%=link_to 'MNH Activities', form_health_mnh_path%></li>
+<li><a href="#">Activity 2</a></li>
+</ul>
+						<br /><br />
+					</div>
+		  		</div>
+		  	</div>
+
+		  	<div class="content-box-large">
+		  	</div>
+		  </div>
+		</div>
+    </div>
+
+    <footer>
+         <div class="container">
+         
+            <div class="copy text-center">
+               Copyright 2015 <a href='#'>Compu Networks</a>
+            </div>
+            
+         </div>
+      </footer>
+

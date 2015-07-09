@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  program: MyText
+  start_date: 2015-03-20
+  end_date: 2015-03-20
+  cases_reported: MyText
+  resolved_law: MyText
+  percentage: MyText
+  churches: MyText
+  outreach: MyText
+  clinics: MyText
+  campaigns: MyText
+  resolved_informal: MyText
+
+two:
+  program: MyText
+  start_date: 2015-03-20
+  end_date: 2015-03-20
+  cases_reported: MyText
+  resolved_law: MyText
+  percentage: MyText
+  churches: MyText
+  outreach: MyText
+  clinics: MyText
+  campaigns: MyText
+  resolved_informal: MyText

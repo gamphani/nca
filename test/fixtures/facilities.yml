@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  facility_name: MyString
+  proprieter: MyString
+  district: MyString
+  cluster: MyString
+
+two:
+  facility_name: MyString
+  proprieter: MyString
+  district: MyString
+  cluster: MyString

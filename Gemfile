@@ -7,16 +7,19 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
+gem 'paperclip', '~> 4.2'
+gem 'carrierwave', '~> 0.9'
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
-  gem 'spring'
+  gem 'spring', '~> 1.3.3'
 end
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'mysql2'
 gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
+gem 'rails_bootstrap_navbar'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]

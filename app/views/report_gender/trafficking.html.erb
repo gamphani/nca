@@ -1,0 +1,205 @@
+<script>
+        
+</script>	
+    <div class="page-content">
+    	<div class="row">
+		  <div class="col-md-2">
+		  	<div class="sidebar content-box" style="display: block;">
+                <ul class="nav">
+                    <!-- Main menu -->
+                    <li class="current"><a href="home/index"><i class="glyphicon glyphicon-home"></i>Home</a></li>
+
+                    <li class="dropdown">
+                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                           <i class="glyphicon glyphicon-tasks"></i> Data Entry <b class="caret"></b>
+                         </a>
+                         <!-- Sub menu -->
+                         <ul>
+                          <li> <%= link_to 'Resource and Finance', forms_new_path %></li>
+                           <li><%= link_to 'Gender Justice', form_gender_index_path %></li>
+                           <li><%= link_to 'Health', form_health_index_path %></li>
+  			   <li><%= link_to 'Monitoring and Evaluation', forms_new_path %></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                           <i class="glyphicon glyphicon-stats"></i> Reports <b class="caret"></b>
+                         </a>
+                         <!-- Sub menu -->
+                         <ul>
+                          <li> <%= link_to 'Resource and Finance', forms_new_path %></li>
+                           <li><%= link_to 'Gender Justice', forms_new_path %></li>
+                           <li><%= link_to 'Health', report_health_index_path %></li>
+  			   <li><%= link_to 'Monitoring and Evaluation', forms_new_path %></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                           <i class="glyphicon glyphicon-download-alt"></i> Documents <b class="caret"></b>
+                         </a>
+                         <!-- Sub menu -->
+                         <ul>
+                          <li> <%= link_to 'View', forms_new_path %></li>
+                           <li><%= link_to 'Upload', forms_new_path %></li>
+                        </ul>
+                    </li>
+
+
+                    <li><a href="tables.html"><i class="glyphicon glyphicon-list"></i>Partners</a></li>
+                </ul>
+             </div>
+		  </div>
+		  <div class="col-md-10">
+		  	<div class="row">
+
+		  	</div>
+
+		  	<div class="row">
+		  		<div class="col-md-12 panel-warning">
+		  			<div class="content-box-header panel-heading">
+	  					<div class="panel-title ">Health - Report</div>
+						
+						<div class="panel-options">
+							<a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
+							<a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
+						</div>
+		  			</div>
+		  			<div class="content-box-large box-with-header">
+			  			
+
+
+
+<!--form-->
+	
+	  					<div class="content-box-large">
+			  				
+			  				<div class="panel-body">
+
+
+
+									<fieldset>
+
+
+
+
+
+
+		  				<div class="panel-body">
+
+
+
+
+
+		  					<table class="table table-bordered">
+				              <tbody>
+				                <tr>
+				                  <td>Forms of trafficking cases reported and documented</td>
+				                  <td><%= @mnh.service_del_svd%></td>
+				                </tr>
+				                <tr>
+				                  <td>Number of trafficking cases resolved by law enforcement agencies</td>
+				                  <td><%= @mnh.service_del_ve%></td>
+				                </tr>
+
+						<tr>
+				                  <td>% reduction of GBV cases in the churches and communities</td>
+				                  <td><%= @mnh.service_del_mart_death%></td>
+				                </tr>
+				            
+
+<tr>
+				                  <td>Number of churches incorporating human rights issues in their church services	</td>
+				                  <td><%= @mnh.service_del_ref_eclampsia%></td>
+				                </tr>
+				                <tr>
+				                  <td>Number of outreach meetings</td>
+				                  <td><%= @mnh.service_del_ref_labour%></td>
+				                </tr>
+
+						<tr>
+				                  <td>Number of legal mobile clinics</td>
+				                  <td><%= @mnh.service_del_ref_aph%></td>
+				                </tr>
+
+
+<tr>
+				                  <td>Number of awareness campaigns	</td>
+				                  <td><%= @mnh.service_del_ref_cs%></td>
+				                </tr>
+				                <tr>
+				                  <td>Number of cases reported and resolved through informal justice systems	</td>
+				                  <td><%= @mnh.service_del_ref_other%></td>
+				                </tr>
+
+						<tr>
+				                  <td>Number of human trafficking victims identified and supported by other service providers</td>
+				                  <td><%= @mnh.service_del_ref_breech%></td>
+				                </tr>
+
+
+						<tr>
+				                  <td>Number of cases reported and resolved through informal justice systemsNumber of victims rescued, rehabiliated and reintegrated</td>
+				                  <td><%= @mnh.service_del_ref_twins%></td>
+				                </tr>
+				                
+
+				                
+				                <tr>
+				                  <td>Number of courts/safe houses rehabilitated</td>
+				                  <td><%= @mnh.neonates_male %></td>
+				                </tr>
+				                <tr>
+				                  <td>Number of networking iniatiaves	</td>
+				                  <td><%= @mnh.neonates_female%></td>
+				                </tr>
+				              
+				                <tr>
+				                  <td>Number of sustained meetings held by interagency operatives</td>
+				                  <td><%= @mnh.nnd_male%></td>
+				                </tr>
+				                <tr>
+				                  <td>Trafficking issues raised and responded to</td>
+				                  <td><%= @mnh.nnd_female%></td>
+				                </tr>
+				                
+
+
+
+
+				              </tbody>
+				            </table>
+		  				</div>
+
+
+
+
+								
+									</fieldset>
+
+			  				</div>
+			  			</div>
+	  				
+
+
+
+
+						<br /><br />
+					</div>
+		  		</div>
+		  	</div>
+
+		  </div>
+		</div>
+    </div>
+
+    <footer>
+         <div class="container">
+         
+            <div class="copy text-center">
+               Copyright 2015 <a href='#'>Compu Networks</a>
+            </div>
+            
+         </div>
+      </footer>

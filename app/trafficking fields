@@ -1,0 +1,22 @@
+trfk_cases_reported
+trfk_cases_resolved
+trfk_percent_reduction
+trfk_incorporation_in_church
+trfk_outreach
+trfk_mobile_clinic
+trfk_awareness
+trfk_informal_justice
+trfk_other_service_providers
+trfk_rescued
+trfk_court_rehabilitated
+trfk_network_initiatives
+trfk_interagency_meet
+trfk_issues_raised
+
+trfk_cases_reported:string trfk_cases_resolved:string trfk_percent_reduction:string trfk_incorporation_in_church:string trfk_outreach:string trfk_mobile_clinic:string trfk_awareness:string trfk_informal_justice:string trfk_other_service_providers:string trfk_rescued:string trfk_court_rehabilitated:string trfk_network_initiatives:string trfk_interagency_meet:string trfk_issues_raised:string
+
+
+
+rails generate model FormHealthMnh start_date:date end_date:date service_del_svd:text service_del_ve:text service_del_mart_death:text service_del_ref:text neonates_male:text neonates_female:text nnd_male:text nnd_female:text nnd_ref:text outreach_preg_mother:text outreach_male:text outreach_female:text mobilization_men:text slas:text facility_planning:text inf_prev_male:text inf_prev_female:text exl_bf_male:text exl_bf_female:text hac_train_male:text hac_train_female:text menu_male:text menu_female:text nutri_male:text nutri_female:text tpt_comm_male:text tpt_comm_female:text sf_mothood_male:text sf_mothood_female:text hac_male:text hac_female:text cluster_male:text cluster_female:text dec_male:text dec_female:text skilled_doc:text skilled_cli:text skilled_nur:text support_hsa:text support_PA:text support_HCW:text support_guard:text support_drv:text maintenance_veh:text maintenance_mcycle:text maintenance_comp:text maintenance_boat:text maintenance_rad:text water_run:text water_borehole:text water_elec:text water_solar:text water_torch:text demo_garden:text hearth:text preg_shelter:text sup_DHO:text sup_coord:text sup_focal:text sup_NCA:text sup_zone:text
+
+:trfk_cases_reported :trfk_cases_resolved :trfk_percent_reduction :trfk_incorporation_in_church :trfk_outreach :trfk_mobile_clinic :trfk_awareness :trfk_informal_justice :trfk_other_service_providers :trfk_rescued :trfk_court_rehabilitated :trfk_network_initiatives :trfk_interagency_meet :trfk_issues_raised

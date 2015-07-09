@@ -1,0 +1,452 @@
+<script>
+        function assignStartDate() {
+           document.getElementById("form_health_mnh_start_date").value = $("#start_date_picker").val();
+        }
+        function assignEndDate() {
+           document.getElementById("form_health_mnh_end_date").value = $("#end_date_picker").val();
+        }
+</script>	
+    <div class="page-content">
+    	<div class="row">
+		  <div class="col-md-2">
+		  	<div class="sidebar content-box" style="display: block;">
+                <ul class="nav">
+                    <!-- Main menu -->
+                    <li class="current"><a href="index.html"><i class="glyphicon glyphicon-home"></i>Programs</a></li>
+		    <li><%= link_to 'Forms', forms_new_path, class: 'glyphicon glyphicon-tasks' %></li>
+                    <li><a href="stats.html"><i class="glyphicon glyphicon-stats"></i>Reports</a></li>
+                    <li><a href="tables.html"><i class="glyphicon glyphicon-list"></i>Partners</a></li>
+                </ul>
+             </div>
+		  </div>
+		  <div class="col-md-10">
+		  	<div class="row">
+
+		  	</div>
+
+		  	<div class="row">
+		  		<div class="col-md-12 panel-warning">
+		  			<div class="content-box-header panel-heading">
+	  					<div class="panel-title ">Data Entry - MNH Activities</div>
+						
+						<div class="panel-options">
+							<a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
+							<a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
+						</div>
+		  			</div>
+		  			<div class="content-box-large box-with-header">
+			  			
+
+
+
+<!--form-->
+	
+	  					<div class="content-box-large">
+			  				
+			  				<div class="panel-body">
+
+
+
+
+
+<%= form_for :form_health_mnh, :url => { :action => :create }	 do |f| %>
+	
+
+			  					<!--form action="/forms/create" method="post"-->
+									<fieldset>
+
+
+
+
+
+
+
+		  				<div class="panel-body">
+
+
+
+
+
+<%= f.hidden_field :start_date, :value => "1900-01-01"%>
+<%= f.hidden_field :end_date, :value => "2013-12-31" %>
+
+
+
+		  					<table class="table table-bordered">
+				              <thead>
+				                <tr>
+				                  <th>Indicator</th>
+				                  <th>Value</th>
+				                </tr>
+				              </thead>
+				              <tbody>
+						<tr>
+						  <td>Start Date</td>
+						  <td><div class="bfh-datepicker" data-format="y-m-d" data-date="today" id="start_date_picker" onchange="assignStartDate()"></div></td>
+						</tr>
+						<tr>
+						  <td>End Date</td>
+						  <td><div class="bfh-datepicker" data-format="y-m-d" data-date="today" id="end_date_picker" onchange="assignEndDate()"></div></td>
+						</tr>
+				                <tr>
+				                  <td colspan = "2"><b>Service delivery <br> Number of deliveries conducted</b></td>
+				                </tr>
+				                <tr>
+				                  <td>SVD</td>
+				                  <td><%= f.text_field :service_del_svd, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>V/E</td>
+				                  <td><%= f.text_field :service_del_ve, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>Maternal Deaths</td>
+				                  <td><%= f.text_field :service_del_mart_death, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>Referrals</td>
+				                  <td><%= f.text_field :service_del_ref, autofocus: true, class: "form-control" %></td>
+				                </tr>
+
+
+				                <tr>
+				                  <td colspan = "2"><b>Number of neonates<br> Live babies</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Male</td>
+				                  <td><%= f.text_field :neonates_male, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>Females</td>
+				                  <td><%= f.text_field :neonates_female, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td colspan = "2"><b>NNDs</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Male</td>
+				                  <td><%= f.text_field :nnd_male, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>Females</td>
+				                  <td><%= f.text_field :nnd_female, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>Referrals</td>
+				                  <td><%= f.text_field :nnd_ref, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                
+						<tr>
+				                  <td colspan = "2">&nbsp;</td>
+				                </tr>
+
+						<tr>
+				                  <td colspan = "2"><b>Conduct outreach clinics</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Pregnant mothers</td>
+				                  <td><%= f.text_field :outreach_preg_mother, autofocus: true, class: "form-control" %></td>
+				                </tr>
+						<tr>
+				                  <td colspan = "2"><b>Underfives</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Male</td>
+				                  <td><%= f.text_field :outreach_male, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>Female</td>
+				                  <td><%= f.text_field :outreach_female, autofocus: true, class: "form-control" %></td>
+				                </tr>
+						<tr>
+				                  <td colspan = "2"><b>Conduct community mobilization and awareness campaigns on male involvement in MNH issues</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Number of men participating</td>
+				                  <td><%= f.text_field :mobilization_men, autofocus: true, class: "form-control" %></td>
+				                </tr>
+						<tr>
+				                  <td colspan = "2"><b>Collaboration between CHAM and Govt</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Number of service level agreement signed</td>
+				                  <td><%= f.text_field :slas, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>Number of facilities involved in planning with districts</td>
+				                  <td><%= f.text_field :facility_planning, autofocus: true, class: "form-control" %></td>
+				                </tr>
+						<tr>
+				                  <td colspan = "2"><b>Capacity building <br>Infection prevention</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Male</td>
+				                  <td><%= f.text_field :inf_prev_male, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>Female</td>
+				                  <td><%= f.text_field :inf_prev_female, autofocus: true, class: "form-control" %></td>
+				                </tr>
+						<tr>
+				                  <td colspan = "2"><b>Exclusive Breast feeding</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Male</td>
+				                  <td><%= f.text_field :exl_bf_male, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>Female</td>
+				                  <td><%= f.text_field :exl_bf_female, autofocus: true, class: "form-control" %></td>
+				                </tr>
+						<tr>
+				                  <td colspan = "2"><b>HAC Training</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Male</td>
+				                  <td><%= f.text_field :hac_train_male, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>Female</td>
+				                  <td><%= f.text_field :hac_train_female, autofocus: true, class: "form-control" %></td>
+				                </tr>
+						<tr>
+				                  <td colspan = "2"><b>Menu trainings</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Male</td>
+				                  <td><%= f.text_field :menu_male, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>Female</td>
+				                  <td><%= f.text_field :menu_female, autofocus: true, class: "form-control" %></td>
+				                </tr>
+						<tr>
+				                  <td colspan = "2"><b>Annual nutrition event</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Male</td>
+				                  <td><%= f.text_field :nutri_male, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>Female</td>
+				                  <td><%= f.text_field :nutri_female, autofocus: true, class: "form-control" %></td>
+				                </tr>
+						<tr>
+				                  <td colspan = "2"><b>Community committees <br>Transport committee</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Male</td>
+				                  <td><%= f.text_field :tpt_comm_male, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>Female</td>
+				                  <td><%= f.text_field :tpt_comm_female, autofocus: true, class: "form-control" %></td>
+				                </tr>
+						<tr>
+				                  <td colspan = "2"><b>Safemotherhood committee</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Male</td>
+				                  <td><%= f.text_field :sf_mothood_male, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>Female</td>
+				                  <td><%= f.text_field :sf_mothood_female, autofocus: true, class: "form-control" %></td>
+				                </tr>
+						<tr>
+				                  <td colspan = "2"><b>HAC</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Male</td>
+				                  <td><%= f.text_field :hac_male, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>Female</td>
+				                  <td><%= f.text_field :hac_female, autofocus: true, class: "form-control" %></td>
+				                </tr>
+						<tr>
+				                  <td colspan = "2"><b>Meetings<br>Number of cluster meetings</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Male</td>
+				                  <td><%= f.text_field :cluster_male, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>Female</td>
+				                  <td><%= f.text_field :cluster_female, autofocus: true, class: "form-control" %></td>
+				                </tr>
+						<tr>
+				                  <td colspan = "2"><b>Number of DEC meetings</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Male</td>
+				                  <td><%= f.text_field :dec_male, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>Female</td>
+				                  <td><%= f.text_field :dec_female, autofocus: true, class: "form-control" %></td>
+				                </tr>
+						<tr>
+				                  <td colspan = "2"><b>Number of skilled staff </b></td>
+				                </tr>
+				                <tr>
+				                  <td>Doctors</td>
+				                  <td><%= f.text_field :skilled_doc, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>Clinicians</td>
+				                  <td><%= f.text_field :skilled_cli, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>Nurse Midwives</td>
+				                  <td><%= f.text_field :skilled_nur, autofocus: true, class: "form-control" %></td>
+				                </tr>
+						<tr>
+				                  <td colspan = "2"><b>Number of support staff</b></td>
+				                </tr>
+				                <tr>
+				                  <td>HSAs</td>
+				                  <td><%= f.text_field :support_hsa, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>PA</td>
+				                  <td><%= f.text_field :support_PA, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>HCW</td>
+				                  <td><%= f.text_field :support_HCW, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>Guard</td>
+				                  <td><%= f.text_field :support_guard, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>Drivers</td>
+				                  <td><%= f.text_field :support_drv, autofocus: true, class: "form-control" %></td>
+				                </tr>
+						<tr>
+				                  <td colspan = "2"><b>Maitenance</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Vehicles</td>
+				                  <td><%= f.text_field :maintenance_veh, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>Motorcycle</td>
+				                  <td><%= f.text_field :maintenance_mcycle, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>Computer</td>
+				                  <td><%= f.text_field :maintenance_comp, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>Boat</td>
+				                  <td><%= f.text_field :maintenance_boat, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>Radio</td>
+				                  <td><%= f.text_field :maintenance_rad, autofocus: true, class: "form-control" %></td>
+				                </tr>
+						<tr>
+				                  <td colspan = "2"><b>Water availability</b></td>
+				                </tr>
+				                <tr>
+				                  <td>Running water</td>
+				                  <td><%= f.text_field :water_run, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>Borehole</td>
+				                  <td><%= f.text_field :water_borehole, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>Electricity</td>
+				                  <td><%= f.text_field :water_elec, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>Solar</td>
+				                  <td><%= f.text_field :water_solar, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>Torches</td>
+				                  <td><%= f.text_field :water_torch, autofocus: true, class: "form-control" %></td>
+				                </tr>
+						<tr>
+				                  <td colspan = "2">&nbsp;</td>
+				                </tr>
+				                <tr>
+				                  <td>Demonstration Garden</td>
+				                  <td><%= f.text_field :demo_garden, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>Hearths</td>
+				                  <td><%= f.text_field :hearth, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>Waiting home for pregnant Mothers</td>
+				                  <td><%= f.text_field :preg_shelter, autofocus: true, class: "form-control" %></td>
+				                </tr>
+						<tr>
+				                  <td colspan = "2"><b>Monitoring visits</b></td>
+				                </tr>
+				                <tr>
+				                  <td>DHOs</td>
+				                  <td><%= f.text_field :sup_DHO, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>Health Coordinators</td>
+				                  <td><%= f.text_field :sup_coord, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>Focal persons</td>
+				                  <td><%= f.text_field :sup_focal, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>NCA</td>
+				                  <td><%= f.text_field :sup_NCA, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>Zone Officers</td>
+				                  <td><%= f.text_field :sup_zone, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				              </tbody>
+				            </table>
+		  				</div>
+
+
+
+
+								
+									</fieldset>
+									<div>
+ 
+											<%= submit_tag "Finish", class:"btn btn-primary" %>
+									</div>
+								<!--/form-->
+  <% end %>
+
+			  				</div>
+			  			</div>
+	  				
+
+
+
+
+						<br /><br />
+					</div>
+		  		</div>
+		  	</div>
+
+		  </div>
+		</div>
+    </div>
+
+    <footer>
+         <div class="container">
+         
+            <div class="copy text-center">
+               Copyright 2015 <a href='#'>Compu Networks</a>
+            </div>
+            
+         </div>
+      </footer>
+

@@ -1,0 +1,180 @@
+ <script>
+        function assignStartDate() {
+           document.getElementById("report_start_date").value = $("#start_date_picker").val();
+          
+        }
+        function assignEndDate() {
+           document.getElementById("report_end_date").value = $("#end_date_picker").val();
+        }
+        function showRow(){
+          
+          var result_style = document.getElementById('hidden_row').style;
+          var tm = document.getElementById('report_report_type').value;
+          
+          if (document.getElementById('report_picker').value == "1"){
+          result_style.display = 'table-row';
+        } else {
+          result_style.display = 'none';
+        }
+        document.getElementById("report_report_type").value = $("#report_picker").val();
+
+        }
+        function assignFacility() {
+           document.getElementById("report_facility").value = $("#facility_picker").val();
+        }
+
+</script>
+	
+    <div class="page-content">
+    	<div class="row">
+		  <div class="col-md-2">
+		  	<div class="sidebar content-box" style="display: block;">
+                <ul class="nav">
+                    <!-- Main menu -->
+                    <li class="current"><a href="home/index"><i class="glyphicon glyphicon-home"></i>Home</a></li>
+
+                    <li class="dropdown">
+                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                           <i class="glyphicon glyphicon-tasks"></i> Data Entry <b class="caret"></b>
+                         </a>
+                         <!-- Sub menu -->
+                         <ul>
+                          <li> <%= link_to 'Resource and Finance', forms_new_path %></li>
+                           <li><%= link_to 'Gender Justice', form_gender_index_path %></li>
+                           <li><%= link_to 'Health', form_health_index_path %></li>
+  			   <li><%= link_to 'Monitoring and Evaluation', forms_new_path %></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                           <i class="glyphicon glyphicon-stats"></i> Reports <b class="caret"></b>
+                         </a>
+                         <!-- Sub menu -->
+                         <ul>
+                          <li> <%= link_to 'Resource and Finance', forms_new_path %></li>
+                           <li><%= link_to 'Gender Justice', forms_new_path %></li>
+                           <li><%= link_to 'Health', report_health_index_path %></li>
+  			   <li><%= link_to 'Monitoring and Evaluation', forms_new_path %></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                           <i class="glyphicon glyphicon-download-alt"></i> Documents <b class="caret"></b>
+                         </a>
+                         <!-- Sub menu -->
+                         <ul>
+                          <li> <%= link_to 'View', forms_new_path %></li>
+                           <li><%= link_to 'Upload', forms_new_path %></li>
+                        </ul>
+                    </li>
+
+
+                    <li><a href="tables.html"><i class="glyphicon glyphicon-list"></i>Partners</a></li>
+                </ul>
+             </div>
+		  </div>
+		  <div class="col-md-10">
+		  	<div class="row">
+
+		  	</div>
+
+		  	<div class="row">
+		  		<div class="col-md-12 panel-warning">
+		  			<div class="content-box-header panel-heading">
+	  					<div class="panel-title ">Gender Justice Reports - Reports</div>
+						
+						<div class="panel-options">
+							<a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
+							<a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
+						</div>
+		  			</div>
+		  			<div class="content-box-large box-with-header">
+<br><br>
+
+
+<%= form_for :report, :url => { :action => :generate }      do |f| %>
+
+
+                                                                <!--form action="/forms/create" method="post"-->
+                                                                        <fieldset>
+
+                                                <div class="panel-body">
+
+
+
+
+
+<%= f.hidden_field :start_date, :value => ""%>
+<%= f.hidden_field :end_date, :value => "" %>
+<%= f.hidden_field :report_type, :value => ""%>
+<%= f.hidden_field :facility, :value => ""%>
+
+
+
+ <table class="table table-bordered">
+<tbody>
+
+        <tr>
+                                                  <td>Select Start Date</td>
+                                                  <td><div class="bfh-datepicker" data-format="y-m-d" data-date="today" id="start_date_picker" onChange="assignStartDate()"></div></td>
+                                                </tr>
+                                                <tr>
+                                                  <td>Select End Date</td>
+                                                  <td><div class="bfh-datepicker" data-format="y-m-d" data-date="today" id="end_date_picker" onChange="assignEndDate()"></div></td>
+                                                </tr>
+<tr>
+<td>Report Type</td>
+<td>
+<select class="form-control" name="report_picker" id="report_picker" onClick="showRow()">
+<option value="0">Select type of report</option>
+<option value="1">Trafficking</option>
+<option value="2">Theology</option>
+</select>
+</td>
+</tr>
+
+<tbody>
+</table>
+
+
+
+                                                                   </fieldset>
+                                                                
+                                                                        <div>
+
+                                                                                        <%= submit_tag "Generate", class:"btn btn-primary" %>
+                                                                        </div>
+                                                                <!--/form-->
+
+
+
+
+<!--/form-->
+  <% end %>
+
+
+
+						<br /><br />
+						<br /><br />
+					</div>
+		  		</div>
+		  	</div>
+
+		  	<div class="content-box-large">
+		  	</div>
+		  </div>
+		</div>
+    </div>
+
+    <footer>
+         <div class="container">
+         
+            <div class="copy text-center">
+               Copyright 2015 <a href='#'>Compu Networks</a>
+            </div>
+            
+         </div>
+      </footer>
+
