@@ -9,13 +9,25 @@
 <% end %>
 
 <div class="well">
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Department</th>
+      <th>Upload file</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+
+
+<tr>
   <%= form_for :docs_new, :url => { :action => :create }                           do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <%= f.label :department %>
-    <%= f.text_field :department %>
-    <%= f.label :attachment %>
-    <%= f.file_field :attachment %>
-    <%= f.submit "Save", class: "btn btn-primary" %>
+  <td><%= f.text_field :name %></td>
+  <td> <%= f.text_field :department %></td>
+  <td> <%= f.file_field :attachment %></td>
+  <td> <%= f.submit "Save", class: "btn btn-primary" %></td>
   <% end %>
+</tr>
 </div>
