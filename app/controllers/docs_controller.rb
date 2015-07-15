@@ -11,7 +11,7 @@ class DocsController < ApplicationController
   	@doc = Doc.new(params[:docs_new].permit(:name, :department, :attachment))
 
     if @doc.save
-      redirect_to docs_path, notice: "The document #{@doc.name} has been uploaded."
+      redirect_to docs_new_path, notice: "The document #{@doc.name} has been uploaded."
     else
       redirect_to docs_new_path, notice: "The document #{@doc.name} was notb saved"
       #render "new"
