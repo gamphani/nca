@@ -3,7 +3,6 @@ class ReportHealthController < ApplicationController
   	@facilities = Facility.all
   end
   def generate
-  	       
   	 if params[:report][:start_date].blank?
   	    flash[:error] = "Please enter a valid start date#{params[:report][:start_date]}"
         redirect_to :action => 'index'
