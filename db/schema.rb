@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150528104028) do
+ActiveRecord::Schema.define(version: 20150724062338) do
 
   create_table "docs", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -28,6 +28,24 @@ ActiveRecord::Schema.define(version: 20150528104028) do
     t.string   "cluster",       limit: 255
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+  end
+
+  create_table "form_gender_theologies", force: :cascade do |t|
+    t.date     "start_date"
+    t.date     "end_date"
+    t.integer  "theo_training_manuals",          limit: 4
+    t.integer  "theo_f_and_m_teachers",          limit: 4
+    t.integer  "theo_context_text",              limit: 4
+    t.integer  "theo_counselors",                limit: 4
+    t.integer  "theo_code_conduct",              limit: 4
+    t.integer  "theo_code_conduct_emp",          limit: 4
+    t.integer  "theo_diaconal_strategies",       limit: 4
+    t.integer  "theo_develop_advocacy_strategy", limit: 4
+    t.integer  "theo_using_advocacy_strategy",   limit: 4
+    t.integer  "theo_monit_visit",               limit: 4
+    t.integer  "theo_reports_produced",          limit: 4
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
   end
 
   create_table "form_gender_traffickings", force: :cascade do |t|
@@ -47,6 +65,20 @@ ActiveRecord::Schema.define(version: 20150528104028) do
     t.string   "trfk_network_initiatives",     limit: 255
     t.string   "trfk_interagency_meet",        limit: 255
     t.string   "trfk_issues_raised",           limit: 255
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+  end
+
+  create_table "form_health_iptts", force: :cascade do |t|
+    t.date     "start_date"
+    t.date     "end_date"
+    t.integer  "iptt_fp_service_providers",      limit: 4
+    t.integer  "iptt_active_youth",              limit: 4
+    t.integer  "iptt_youth_partcipation",        limit: 4
+    t.integer  "iptt_life_skills",               limit: 4
+    t.integer  "iptt_SRHR_BCC",                  limit: 4
+    t.integer  "iptt_leaders_reached",           limit: 4
+    t.integer  "iptt_trained_service_providers", limit: 4
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
   end
@@ -137,6 +169,64 @@ ActiveRecord::Schema.define(version: 20150528104028) do
     t.datetime "updated_at",                                  null: false
   end
 
+  create_table "form_health_trainings", force: :cascade do |t|
+    t.integer  "trn_hundred_percent_license",  limit: 4
+    t.integer  "trn_management_systems",       limit: 4
+    t.integer  "trn_teaching_materials",       limit: 4
+    t.integer  "trn_capacity_built",           limit: 4
+    t.integer  "trn_satisfaction_level",       limit: 4
+    t.integer  "trn_course_outlines",          limit: 4
+    t.integer  "trn_BSC_RM_Curr",              limit: 4
+    t.integer  "trn_clinical_asses_tools",     limit: 4
+    t.integer  "trn_tutor_perf_tools",         limit: 4
+    t.integer  "trn_mentor_skills",            limit: 4
+    t.integer  "trn_reduction_unprof_student", limit: 4
+    t.integer  "trn_tutor_induct_midwife",     limit: 4
+    t.integer  "trn_strategic_plans",          limit: 4
+    t.integer  "trn_ops_plans",                limit: 4
+    t.integer  "trn_financial_systems",        limit: 4
+    t.integer  "trn_SOPs",                     limit: 4
+    t.integer  "trn_good_governance",          limit: 4
+    t.integer  "trn_policies",                 limit: 4
+    t.integer  "trn_motivated_pupils",         limit: 4
+    t.integer  "trn_research",                 limit: 4
+    t.integer  "trn_ntwk_meetings",            limit: 4
+    t.integer  "trn_MOU",                      limit: 4
+    t.integer  "trn_monitoring",               limit: 4
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.date     "start_date"
+    t.date     "end_date"
+  end
+
+  create_table "form_trainings", force: :cascade do |t|
+    t.integer  "trn_hundred_percent_license",  limit: 4
+    t.integer  "trn_management_systems",       limit: 4
+    t.integer  "trn_teaching_materials",       limit: 4
+    t.integer  "trn_capacity_built",           limit: 4
+    t.integer  "trn_satisfaction_level",       limit: 4
+    t.integer  "trn_course_outlines",          limit: 4
+    t.integer  "trn_BSC_RM_Curr",              limit: 4
+    t.integer  "trn_clinical_asses_tools",     limit: 4
+    t.integer  "trn_tutor_perf_tools",         limit: 4
+    t.integer  "trn_mentor_skills",            limit: 4
+    t.integer  "trn_reduction_unprof_student", limit: 4
+    t.integer  "trn_tutor_induct_midwife",     limit: 4
+    t.integer  "trn_strategic_plans",          limit: 4
+    t.integer  "trn_ops_plans",                limit: 4
+    t.integer  "trn_financial_systems",        limit: 4
+    t.integer  "trn_SOPs",                     limit: 4
+    t.integer  "trn_good_governance",          limit: 4
+    t.integer  "trn_policies",                 limit: 4
+    t.integer  "trn_motivated_pupils",         limit: 4
+    t.integer  "trn_research",                 limit: 4
+    t.integer  "trn_ntwk_meetings",            limit: 4
+    t.integer  "trn_MOU",                      limit: 4
+    t.integer  "trn_monitoring",               limit: 4
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+  end
+
   create_table "forms", force: :cascade do |t|
     t.text     "program",           limit: 65535
     t.date     "start_date"
@@ -156,6 +246,12 @@ ActiveRecord::Schema.define(version: 20150528104028) do
   create_table "reports", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "test_mes", force: :cascade do |t|
+    t.integer  "me",         limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
   create_table "users", force: :cascade do |t|

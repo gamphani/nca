@@ -20,6 +20,10 @@ class ReportHealthController < ApplicationController
 	 @report = FormHealthMnh.all.where("start_date >= ? AND end_date <= ? ", params[:report][:start_date], params[:report][:end_date]).each{}
 	 if params[:report][:report_type] == "1"
 	 	redirect_to :action => 'mnh', :start_date => params[:report][:start_date], :end_date => params[:report][:end_date], :facility => params[:report][:facility]
+	 elsif params[:report][:report_type] == "2"
+	 	redirect_to :action => 'training', :start_date => params[:report][:start_date], :end_date => params[:report][:end_date]
+	 elsif params[:report][:report_type] == "3"
+	 	redirect_to :action => 'iptt', :start_date => params[:report][:start_date], :end_date => params[:report][:end_date]
      end
 	 #redirect_to '/report_health/mnh'
 
@@ -58,4 +62,13 @@ class ReportHealthController < ApplicationController
 
 @mnh = @report.first
   end
+ def training
+   @report = FormHealthTraining.select("SUM(trn_hundred_percent_license) as trn_hundred_percent_license, SUM(trn_management_systems) AS trn_management_systems, SUM(trn_teaching_materials) AS trn_teaching_materials, SUM(trn_capacity_built) AS trn_capacity_built, SUM(trn_satisfaction_level) AS trn_satisfaction_level, SUM(trn_course_outlines) as trn_course_outlines, SUM(trn_BSC_RM_Curr) AS trn_BSC_RM_Curr, SUM(trn_clinical_asses_tools) as trn_clinical_asses_tools, SUM(trn_tutor_perf_tools) as trn_tutor_perf_tools, SUM(trn_mentor_skills) as trn_mentor_skills, SUM(trn_reduction_unprof_student) as trn_reduction_unprof_student, SUM(trn_tutor_induct_midwife) as trn_tutor_induct_midwife, SUM(trn_strategic_plans) as trn_strategic_plans, SUM(trn_ops_plans) AS trn_ops_plans, SUM(trn_financial_systems) AS trn_financial_systems, SUM(trn_SOPs) as trn_SOPs, SUM(trn_good_governance) as trn_good_governance, SUM(trn_policies) AS trn_policies, SUM(trn_motivated_pupils) as trn_motivated_pupils, SUM(trn_research) AS trn_research, SUM(trn_ntwk_meetings) AS trn_ntwk_meetings, SUM(trn_MOU) as trn_MOU, SUM(trn_monitoring) as trn_monitoring").where("start_date >= ? AND end_date <= ?", params[:start_date], [:end_date])
+   @training = @report.first
+end
+def iptt
+@report = FormHealthIptt.select("SUM(iptt_fp_service_providers) as iptt_fp_service_providers, SUM(iptt_active_youth) as iptt_active_youth, SUM(iptt_youth_partcipation) AS iptt_youth_partcipation, SUM(iptt_life_skills) AS iptt_life_skills, SUM(iptt_SRHR_BCC) as iptt_SRHR_BCC, SUM(iptt_leaders_reached) as iptt_leaders_reached, SUM(iptt_trained_service_providers) as iptt_trained_service_providers").where("start_date >= ? AND end_date <= ?", params[:start_date], [:end_date])
+@iptt = @report.first
+
+end
 end
