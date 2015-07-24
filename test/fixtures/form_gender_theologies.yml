@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_date: 2015-07-23
+  end_date: 2015-07-23
+  theo_training_manuals: 1
+  theo_f_and_m_teachers: 1
+  theo_context_text: 1
+  theo_counselors: 1
+  theo_code_conduct: 1
+  theo_code_conduct_emp: 1
+  theo_diaconal_strategies: 1
+  theo_develop_advocacy_strategy: 1
+  theo_using_advocacy_strategy: 1
+  theo_monit_visit: 1
+  theo_reports_produced: 1
+
+two:
+  start_date: 2015-07-23
+  end_date: 2015-07-23
+  theo_training_manuals: 1
+  theo_f_and_m_teachers: 1
+  theo_context_text: 1
+  theo_counselors: 1
+  theo_code_conduct: 1
+  theo_code_conduct_emp: 1
+  theo_diaconal_strategies: 1
+  theo_develop_advocacy_strategy: 1
+  theo_using_advocacy_strategy: 1
+  theo_monit_visit: 1
+  theo_reports_produced: 1

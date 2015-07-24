@@ -1,0 +1,51 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  trn_hundred_percent_license: 1
+  trn_management_systems: 1
+  trn_teaching_materials: 1
+  trn_capacity_built: 1
+  trn_satisfaction_level: 1
+  trn_course_outlines: 1
+  trn_BSC_RM_Curr: 1
+  trn_clinical_asses_tools: 1
+  trn_tutor_perf_tools: 1
+  trn_mentor_skills: 1
+  trn_reduction_unprof_student: 1
+  trn_tutor_induct_midwife: 1
+  trn_strategic_plans: 1
+  trn_ops_plans: 1
+  trn_financial_systems: 1
+  trn_SOPs: 1
+  trn_good_governance: 1
+  trn_policies: 1
+  trn_motivated_pupils: 1
+  trn_research: 1
+  trn_ntwk_meetings: 1
+  trn_MOU: 1
+  trn_monitoring: 1
+
+two:
+  trn_hundred_percent_license: 1
+  trn_management_systems: 1
+  trn_teaching_materials: 1
+  trn_capacity_built: 1
+  trn_satisfaction_level: 1
+  trn_course_outlines: 1
+  trn_BSC_RM_Curr: 1
+  trn_clinical_asses_tools: 1
+  trn_tutor_perf_tools: 1
+  trn_mentor_skills: 1
+  trn_reduction_unprof_student: 1
+  trn_tutor_induct_midwife: 1
+  trn_strategic_plans: 1
+  trn_ops_plans: 1
+  trn_financial_systems: 1
+  trn_SOPs: 1
+  trn_good_governance: 1
+  trn_policies: 1
+  trn_motivated_pupils: 1
+  trn_research: 1
+  trn_ntwk_meetings: 1
+  trn_MOU: 1
+  trn_monitoring: 1

@@ -1,0 +1,209 @@
+		<script>
+			function assignStartDate() {
+				document.getElementById("form_health_iptt_start_date").value = $("#start_date_picker").val();
+			}
+			function assignEndDate() {
+				document.getElementById("form_health_iptt_end_date").value = $("#end_date_picker").val();
+			}
+
+		</script>	
+		<div class="page-content">
+			<div class="row">
+				<div class="col-md-2">
+					<div class="sidebar content-box" style="display: block;">
+						<ul class="nav">
+							<!-- Main menu -->
+							<li class="current"><a href="home/index"><i class="glyphicon glyphicon-home"></i>Home</a></li>
+
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									<i class="glyphicon glyphicon-tasks"></i> Data Entry <b class="caret"></b>
+								</a>
+								<!-- Sub menu -->
+								<ul>
+									<li> <%= link_to 'Resource and Finance', forms_new_path %></li>
+									<li><%= link_to 'Gender Justice', form_gender_index_path %></li>
+									<li><%= link_to 'Health', form_health_index_path %></li>
+									<li><%= link_to 'Monitoring and Evaluation', forms_new_path %></li>
+								</ul>
+							</li>
+
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									<i class="glyphicon glyphicon-stats"></i> Reports <b class="caret"></b>
+								</a>
+								<!-- Sub menu -->
+								<ul>
+									<li> <%= link_to 'Resource and Finance', forms_new_path %></li>
+									<li><%= link_to 'Gender Justice', forms_new_path %></li>
+									<li><%= link_to 'Health', report_health_index_path %></li>
+									<li><%= link_to 'Monitoring and Evaluation', forms_new_path %></li>
+								</ul>
+							</li>
+
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									<i class="glyphicon glyphicon-download-alt"></i> Documents <b class="caret"></b>
+								</a>
+								<!-- Sub menu -->
+								<ul>
+									<li> <%= link_to 'View', forms_new_path %></li>
+									<li><%= link_to 'Upload', forms_new_path %></li>
+								</ul>
+							</li>
+
+
+							<li><a href="tables.html"><i class="glyphicon glyphicon-list"></i>Partners</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-10">
+					<div class="row">
+
+					</div>
+
+					<div class="row">
+						<div class="col-md-12 panel-warning">
+							<div class="content-box-header panel-heading">
+								<div class="panel-title ">Data Entry - Reproductive Health</div>
+								
+								<div class="panel-options">
+									<a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
+									<a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
+								</div>
+							</div>
+							<div class="content-box-large box-with-header">
+								
+
+
+
+								<!--form-->
+								
+								<div class="content-box-large">
+									
+									<div class="panel-body">
+
+
+
+
+
+										<%= form_for :form_health_iptt, :url => { :action => :create }	 do |f| %>
+										
+
+										<!--form action="/forms/create" method="post"-->
+										<fieldset>
+
+
+
+
+
+
+
+											<div class="panel-body">
+
+
+
+
+
+												<%= f.hidden_field :start_date, :value => "1900-01-01"%>
+												<%= f.hidden_field :end_date, :value => "2013-12-31" %>
+												
+
+
+
+												<table class="table table-bordered">
+													<thead>
+														<tr>
+															<th>Indicator</th>
+															<th>Value</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>Start Date</td>
+															<td><div class="bfh-datepicker" data-format="y-m-d" data-date="today" id="start_date_picker" onchange="assignStartDate()"></div></td>
+														</tr>
+														<tr>
+															<td>End Date</td>
+															<td><div class="bfh-datepicker" data-format="y-m-d" data-date="today" id="end_date_picker" onchange="assignEndDate()"></div></td>
+														</tr>
+														
+
+														<tr>
+															<td colspan = "2">&nbsp;</td>
+														</tr>
+														<tr>
+															<td>Number of  FP services provided to young people (gender and age cohort disaggregated )under the project</td>
+															<td><%= f.text_field :iptt_fp_service_providers, autofocus: true, class: "form-control" %></td>
+														</tr>
+														<tr>
+															<td>Number of active youth clubs</td>
+															<td><%= f.text_field :iptt_active_youth, autofocus: true, class: "form-control" %></td>
+														</tr>
+														
+														<tr>
+															<td colspan = "2">&nbsp;</td>
+														</tr>
+														<tr>
+															<td>Number of young people participating in youth clubs</td>
+															<td><%= f.text_field :iptt_youth_partcipation, autofocus: true, class: "form-control" %></td>
+														</tr>
+														<tr>
+															<td>Number of people trained in life skills</td>
+															<td><%= f.text_field :iptt_life_skills, autofocus: true, class: "form-control" %></td>
+														</tr>
+														<tr>
+															<td> Number of people reached with SRHR BCC and advocacy messages disaggregated by channel and key message</td>
+</td>
+															<td><%= f.text_field :iptt_SRHR_BCC, autofocus: true, class: "form-control" %></td>
+														</tr>
+														<tr>
+															<td>Number of  leaders reached by awareness and advocacy initiatives (by type, level and gender)</td>
+															<td><%= f.text_field :iptt_leaders_reached, autofocus: true, class: "form-control" %></td>
+														</tr>
+														<tr>
+															<td>Number of service providers trained  disaggregated by gender and type</td>
+															<td><%= f.text_field :iptt_trained_service_providers, autofocus: true, class: "form-control" %></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+
+
+
+
+											
+										</fieldset>
+										<div>
+											
+											<%= submit_tag "Finish", class:"btn btn-primary" %>
+										</div>
+										<!--/form-->
+										<% end %>
+
+									</div>
+								</div>
+								
+
+
+
+
+								<br /><br />
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<footer>
+			<div class="container">
+				
+				<div class="copy text-center">
+					Copyright 2015 <a href='#'>Compu Networks</a>
+				</div>
+				
+			</div>
+		</footer>
+

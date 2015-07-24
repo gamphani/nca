@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_date: 2015-07-24
+  end_date: 2015-07-24
+  iptt_fp_service_providers: 1
+  iptt_active_youth: 1
+  iptt_youth_partcipation: 1
+  iptt_life_skills: 1
+  iptt_SRHR_BCC: 1
+  iptt_leaders_reached: 1
+  iptt_trained_service_providers: 1
+
+two:
+  start_date: 2015-07-24
+  end_date: 2015-07-24
+  iptt_fp_service_providers: 1
+  iptt_active_youth: 1
+  iptt_youth_partcipation: 1
+  iptt_life_skills: 1
+  iptt_SRHR_BCC: 1
+  iptt_leaders_reached: 1
+  iptt_trained_service_providers: 1

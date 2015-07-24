@@ -1,0 +1,176 @@
+<script>
+        
+</script>	
+    <div class="page-content">
+    	<div class="row">
+		  <div class="col-md-2">
+		  	<div class="sidebar content-box" style="display: block;">
+                <ul class="nav">
+                    <!-- Main menu -->
+                    <li class="current"><a href="home/index"><i class="glyphicon glyphicon-home"></i>Home</a></li>
+
+                    <li class="dropdown">
+                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                           <i class="glyphicon glyphicon-tasks"></i> Data Entry <b class="caret"></b>
+                         </a>
+                         <!-- Sub menu -->
+                         <ul>
+                          <li> <%= link_to 'Resource and Finance', forms_new_path %></li>
+                           <li><%= link_to 'Gender Justice', form_gender_index_path %></li>
+                           <li><%= link_to 'Health', form_health_index_path %></li>
+  			   <li><%= link_to 'Monitoring and Evaluation', forms_new_path %></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                           <i class="glyphicon glyphicon-stats"></i> Reports <b class="caret"></b>
+                         </a>
+                         <!-- Sub menu -->
+                         <ul>
+                          <li> <%= link_to 'Resource and Finance', forms_new_path %></li>
+                           <li><%= link_to 'Gender Justice', forms_new_path %></li>
+                           <li><%= link_to 'Health', report_health_index_path %></li>
+  			   <li><%= link_to 'Monitoring and Evaluation', forms_new_path %></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                           <i class="glyphicon glyphicon-download-alt"></i> Documents <b class="caret"></b>
+                         </a>
+                         <!-- Sub menu -->
+                         <ul>
+                          <li> <%= link_to 'View', forms_new_path %></li>
+                           <li><%= link_to 'Upload', forms_new_path %></li>
+                        </ul>
+                    </li>
+
+
+                    <li><a href="tables.html"><i class="glyphicon glyphicon-list"></i>Partners</a></li>
+                </ul>
+             </div>
+		  </div>
+		  <div class="col-md-10">
+		  	<div class="row">
+
+		  	</div>
+
+		  	<div class="row">
+		  		<div class="col-md-12 panel-warning">
+		  			<div class="content-box-header panel-heading">
+	  					<div class="panel-title ">Reproductive Health - Report</div>
+						
+						<div class="panel-options">
+							<a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
+							<a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
+						</div>
+		  			</div>
+		  			<div class="content-box-large box-with-header">
+			  			
+
+
+
+<!--form-->
+	
+	  					<div class="content-box-large">
+			  				
+			  				<div class="panel-body">
+
+
+
+									<fieldset>
+
+
+
+
+
+
+		  				<div class="panel-body">
+
+
+
+
+
+		  					<table class="table table-bordered">
+				              <tbody>
+				                
+				                <tr>
+															<td colspan = "2">&nbsp;</td>
+														</tr>
+														
+
+
+														<tr>
+															<td>Number of  FP services provided to young people (gender and age cohort disaggregated )under the project</td>
+															<td><%= @iptt.iptt_fp_service_providers %></td>
+														</tr>
+														<tr>
+															<td>Number of active youth clubs</td>
+															<td><%= @iptt.iptt_active_youth %></td>
+														</tr>
+														
+														<tr>
+															<td colspan = "2">&nbsp;</td>
+														</tr>
+														<tr>
+															<td>Number of young people participating in youth clubs</td>
+															<td><%= @iptt.iptt_youth_partcipation %></td>
+														</tr>
+														<tr>
+															<td>Number of people trained in life skills</td>
+															<td><%= @iptt.iptt_life_skills %></td>
+														</tr>
+														<tr>
+															<td> Number of people reached with SRHR BCC and advocacy messages disaggregated by channel and key message</td>
+</td>
+															<td><%= @iptt.iptt_SRHR_BCC %></td>
+														</tr>
+														<tr>
+															<td>Number of  leaders reached by awareness and advocacy initiatives (by type, level and gender)</td>
+															<td><%= @iptt.iptt_leaders_reached %></td>
+														</tr>
+														<tr>
+															<td>Number of service providers trained  disaggregated by gender and type</td>
+															<td><%= @iptt.iptt_trained_service_providers %></td>
+														</tr>
+				                
+
+
+
+
+				              </tbody>
+				            </table>
+		  				</div>
+
+
+
+
+								
+									</fieldset>
+
+			  				</div>
+			  			</div>
+	  				
+
+
+
+
+						<br /><br />
+					</div>
+		  		</div>
+		  	</div>
+
+		  </div>
+		</div>
+    </div>
+
+    <footer>
+         <div class="container">
+         
+            <div class="copy text-center">
+               Copyright 2015 <a href='#'>Compu Networks</a>
+            </div>
+            
+         </div>
+      </footer>
