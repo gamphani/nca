@@ -19,6 +19,8 @@ class ReportGenderController < ApplicationController
    @report = FormGenderTrafficking.all.where("start_date >= ? AND end_date <= ? ", params[:report][:start_date], params[:report][:end_date]).each{}
    if params[:report][:report_type] == "1"
     redirect_to :action => 'trafficking', :start_date => params[:report][:start_date], :end_date => params[:report][:end_date]
+   elsif params[:report][:report_type] == "2"
+    redirect_to :action => 'theology', :start_date => params[:report][:start_date], :end_date => params[:report][:end_date]
      end
    #redirect_to '/report_health/mnh'
 
@@ -30,5 +32,7 @@ class ReportGenderController < ApplicationController
   end
 
   def theology
+   @report = FormGenderTheology.select("SUM(theo_training_manuals) AS theo_training_manuals,  SUM(theo_f_and_m_teachers) as theo_f_and_m_teachers,  SUM(theo_context_text) AS theo_context_text,  SUM(theo_counselors) AS theo_counselors,  SUM(theo_code_conduct) AS theo_code_conduct,  SUM(theo_code_conduct_emp) as theo_code_conduct_emp,  SUM(theo_diaconal_strategies) as theo_diaconal_strategies,  SUM(theo_develop_advocacy_strategy) as theo_develop_advocacy_strategy,  SUM(theo_using_advocacy_strategy) as theo_using_advocacy_strategy,  SUM(theo_monit_visit) as theo_monit_visit,  SUM(theo_reports_produced) as theo_reports_produced").where("start_date >= ? AND end_date <= ?", params[:start_date], params[:end_date])
+   @theology = @report.first
   end
 end
