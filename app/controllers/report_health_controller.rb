@@ -24,6 +24,9 @@ class ReportHealthController < ApplicationController
 	 	redirect_to :action => 'training', :start_date => params[:report][:start_date], :end_date => params[:report][:end_date]
 	 elsif params[:report][:report_type] == "3"
 	 	redirect_to :action => 'iptt', :start_date => params[:report][:start_date], :end_date => params[:report][:end_date]
+         elsif params[:report][:report_type] == "4"
+                redirect_to :action => 'hiv', :start_date => params[:report][:start_date], :end_date => params[:report][:end_date]
+
      end
 	 #redirect_to '/report_health/mnh'
 
@@ -71,4 +74,14 @@ def iptt
 @iptt = @report.first
 
 end
+
+def hiv
+@report = FormHealthHiv.select("SUM(hiv_rights_holders) AS hiv_rights_holders,SUM(hiv_lobby_meetings) AS hiv_lobby_meetings,SUM(hiv_women_htc_pmtct) AS  hiv_women_htc_pmtct, SUM(hiv_budget_allocation) AS hiv_budget_allocation, SUM(hiv_rh_receiving_care) AS hiv_rh_receiving_care,SUM(hiv_women_youth_ovc) AS hiv_women_youth_ovc, SUM(hiv_reconstruction) AS hiv_reconstruction, SUM(hiv_people_htc) AS hiv_people_htc,SUM(hiv_child_pss) AS hiv_child_pss").where("start_date >= ? AND end_date <= ?", params[:start_date], [:end_date])
+
+@hiv = @report.first
+end
+
+
+
+
 end

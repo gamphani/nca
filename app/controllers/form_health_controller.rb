@@ -12,6 +12,11 @@ class FormHealthController < ApplicationController
      @form = FormHealthIptt.new(params[:form_health_iptt].permit(:start_date, :end_date, :iptt_fp_service_providers, :iptt_active_youth, :iptt_youth_partcipation, :iptt_life_skills, :iptt_SRHR_BCC, :iptt_leaders_reached, :iptt_trained_service_providers))
      @form.save
    
+elsif params.has_key?("form_health_hiv")
+     @form = FormHealthHiv.new(params[:form_health_hiv].permit(:start_date, :end_date, :hiv_rights_holders, :hiv_lobby_meetings, :hiv_women_htc_pmtct, :hiv_budget_allocation, :hiv_rh_receiving_care, :hiv_women_youth_ovc, :hiv_reconstruction, :hiv_people_htc, :hiv_child_pss))
+     @form.save
+
+
      end
 
      redirect_to '/form_health/index'
@@ -20,6 +25,8 @@ class FormHealthController < ApplicationController
   	@facilities = Facility.all
   end
   def training
+  end
+  def hiv
   end
 
 end

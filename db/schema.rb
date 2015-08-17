@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150724062338) do
+ActiveRecord::Schema.define(version: 20150813045322) do
 
   create_table "docs", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -67,6 +67,22 @@ ActiveRecord::Schema.define(version: 20150724062338) do
     t.string   "trfk_issues_raised",           limit: 255
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
+  end
+
+  create_table "form_health_hivs", force: :cascade do |t|
+    t.date     "start_date"
+    t.date     "end_date"
+    t.text     "hiv_rights_holders",    limit: 65535
+    t.text     "hiv_lobby_meetings",    limit: 65535
+    t.text     "hiv_women_htc_pmtct",   limit: 65535
+    t.text     "hiv_budget_allocation", limit: 65535
+    t.text     "hiv_rh_receiving_care", limit: 65535
+    t.text     "hiv_women_youth_ovc",   limit: 65535
+    t.text     "hiv_reconstruction",    limit: 65535
+    t.text     "hiv_people_htc",        limit: 65535
+    t.text     "hiv_child_pss",         limit: 65535
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
   create_table "form_health_iptts", force: :cascade do |t|

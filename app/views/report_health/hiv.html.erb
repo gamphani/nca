@@ -1,4 +1,6 @@
-  	
+<script>
+        
+</script>	
     <div class="page-content">
     	<div class="row">
 		  <div class="col-md-2">
@@ -57,7 +59,7 @@
 		  	<div class="row">
 		  		<div class="col-md-12 panel-warning">
 		  			<div class="content-box-header panel-heading">
-	  					<div class="panel-title ">Health - Form selection</div>
+	  					<div class="panel-title ">HIV AIDS - Report</div>
 						
 						<div class="panel-options">
 							<a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
@@ -65,25 +67,109 @@
 						</div>
 		  			</div>
 		  			<div class="content-box-large box-with-header">
-This is a Web Based Database Management System for the Norwegian Church Aid. It contains quarterly data and generates reports as required by the NCA's programs. Below are the areas for which this database system stores, analyses and generates reports.
+			  			
 
 
 
-						<br /><br />
-						<br /><br />
-<ul>
-<li><%=link_to 'MNH Activities', form_health_mnh_path%></li>
-<li><%=link_to 'Improved Health Training', form_health_training_path%></li>
-<li><%=link_to 'Reproductive Health', form_health_iptt_path%></li>
-<li><%=link_to 'HIV Aids', form_health_hiv_path%></li>
-</ul>
+<!--form-->
+	
+	  					<div class="content-box-large">
+			  				
+			  				<div class="panel-body">
+
+
+
+									<fieldset>
+
+
+
+
+
+
+		  				<div class="panel-body">
+
+
+
+
+
+		  					<table class="table table-bordered">
+				              <tbody>
+				                
+				                <tr>
+															<td colspan = "2">&nbsp;</td>
+														</tr>
+														
+
+
+														<tr>
+															<td># of rights holders on ART and PMTCT</td>
+															<td><%= @hiv.hiv_rights_holders %></td>
+														</tr>
+														<tr>
+															<td># of lobbying meetings, policy dialogues and national debates conducted</td>
+															<td><%= @hiv.hiv_lobby_meetings %></td>
+														</tr>
+														
+														<tr>
+															<td colspan = "2">&nbsp;</td>
+														</tr>
+														<tr>
+															<td># of women on HTC and PMTCT</td>
+															<td><%= @hiv.hiv_women_htc_pmtct %></td>
+														</tr>
+														<tr>
+															<td>% increase in budgetary allocation to HIV and AIDS</td>
+															<td><%= @hiv.hiv_budget_allocation %></td>
+														</tr>
+														<tr>
+															<td> # RH receiving care and support</td>
+</td>
+															<td><%= @hiv.hiv_rh_receiving_care %></td>
+														</tr>
+														<tr>
+															<td># of  women , youth and OVCs benefiting from vocational skills and IGAs</td>
+															<td><%= @hiv.hiv_women_youth_ovc %></td>
+														</tr>
+														<tr>
+															<td>Number of men and women, boys and girls trained in reconstruction of masculinity, alcohol, and HIV and AIDS</td>
+															<td><%= @hiv.hiv_reconstruction%></td>
+														</tr>
+
+														<tr>
+															<td># of people going for HTC</td>
+															<td><%= @hiv.hiv_people_htc %></td>
+														</tr>
+														<tr>
+															<td># of children accessing PSS  services</td>
+															<td><%= @hiv.hiv_child_pss%></td>
+														</tr>
+				                
+
+
+
+
+				              </tbody>
+				            </table>
+		  				</div>
+
+
+
+
+								
+									</fieldset>
+
+			  				</div>
+			  			</div>
+	  				
+
+
+
+
 						<br /><br />
 					</div>
 		  		</div>
 		  	</div>
 
-		  	<div class="content-box-large">
-		  	</div>
 		  </div>
 		</div>
     </div>
@@ -97,4 +183,3 @@ This is a Web Based Database Management System for the Norwegian Church Aid. It 
             
          </div>
       </footer>
-
