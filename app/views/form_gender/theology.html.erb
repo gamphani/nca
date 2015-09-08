@@ -3,7 +3,7 @@
 				document.getElementById("form_gender_theology_start_date").value = $("#start_date_picker").val();
 			}
 			function assignEndDate() {
-				document.getElementById("form_hgender_theology_end_date").value = $("#end_date_picker").val();
+				document.getElementById("form_gender_theology_end_date").value = $("#end_date_picker").val();
 			}
 </script>	
     <div class="page-content">
@@ -178,6 +178,14 @@
 				                 <tr>
 				                  <td>Number of reports produced.</td>
 				                  <td><%= f.text_field :theo_reports_produced, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                <tr>
+				                  <td>Number of church leaders trained as TOTs</td>
+				                  <td><%= f.text_field :theo_church_leader_tot, autofocus: true, class: "form-control" %></td>
+				                </tr>
+				                 <tr>
+				                  <td>Joint declaration by church leaders on Gender based violence</td>				                 
+				                  <td><%= f.select :theo_church_joint_declaration, options_for_select( ["Yes","No"]),autofocus: true, class: "form-control" %></td>
 				                </tr>
 				                
 

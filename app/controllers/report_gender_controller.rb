@@ -32,7 +32,10 @@ class ReportGenderController < ApplicationController
   end
 
   def theology
-   @report = FormGenderTheology.select("SUM(theo_training_manuals) AS theo_training_manuals,  SUM(theo_f_and_m_teachers) as theo_f_and_m_teachers,  SUM(theo_context_text) AS theo_context_text,  SUM(theo_counselors) AS theo_counselors,  SUM(theo_code_conduct) AS theo_code_conduct,  SUM(theo_code_conduct_emp) as theo_code_conduct_emp,  SUM(theo_diaconal_strategies) as theo_diaconal_strategies,  SUM(theo_develop_advocacy_strategy) as theo_develop_advocacy_strategy,  SUM(theo_using_advocacy_strategy) as theo_using_advocacy_strategy,  SUM(theo_monit_visit) as theo_monit_visit,  SUM(theo_reports_produced) as theo_reports_produced").where("start_date >= ? AND end_date <= ?", params[:start_date], params[:end_date])
+   @report = FormGenderTheology.select("SUM(theo_training_manuals) AS theo_training_manuals,  SUM(theo_f_and_m_teachers) as theo_f_and_m_teachers,  SUM(theo_context_text) AS theo_context_text,  SUM(theo_counselors) AS theo_counselors,  SUM(theo_code_conduct) AS theo_code_conduct,  SUM(theo_code_conduct_emp) as theo_code_conduct_emp,  SUM(theo_diaconal_strategies) as theo_diaconal_strategies,  SUM(theo_develop_advocacy_strategy) as theo_develop_advocacy_strategy,  SUM(theo_using_advocacy_strategy) as theo_using_advocacy_strategy,  SUM(theo_monit_visit) as theo_monit_visit,  SUM(theo_reports_produced) as theo_reports_produced, SUM(theo_church_leader_tot) AS theo_church_leader_tot").where("start_date >= ? AND end_date <= ?", params[:start_date], params[:end_date])
    @theology = @report.first
+   @report2 = FormGenderTheology.select("theo_church_joint_declaration").where("start_date >= ? AND end_date <= ?", params[:start_date], params[:end_date])
+   @theology2 = @report2.last
+
   end
 end

@@ -166,10 +166,11 @@
 															<td><%= f.text_field :service_del_mart_death, autofocus: true, class: "form-control" %></td>
 														</tr>
 
-
 														<tr>
-															<td colspan = "2"><b>Referrals</b></td>
+															<td>Referrals</td>
+															<td><%= f.text_field :service_del_ref, autofocus: true, class: "form-control" %></td>
 														</tr>
+													
 														<tr>
 															<td>Pre/eclampsia</td>
 															<td><%= f.text_field :service_del_ref_eclampsia, autofocus: true, class: "form-control" %></td>
@@ -466,46 +467,48 @@
 														</tr>
 														<tr>
 															<td>Vehicles</td>
-															<td><%= f.text_field :maintenance_veh, autofocus: true, class: "form-control" %></td>
+															<td><%#= f.text_field :maintenance_veh, autofocus: true, class: "form-control" %>
+															<%= f.select :maintenance_veh, options_for_select( ["Yes","No"]),autofocus: true, class: "form-control" %>
+															</td>
 														</tr>
 														<tr>
 															<td>Motorcycle</td>
-															<td><%= f.text_field :maintenance_mcycle, autofocus: true, class: "form-control" %></td>
+															<td><%= f.select :maintenance_mcycle, options_for_select( ["Yes","No"]), autofocus: true, class: "form-control" %></td>
 														</tr>
 														<tr>
 															<td>Computer</td>
-															<td><%= f.text_field :maintenance_comp, autofocus: true, class: "form-control" %></td>
+															<td><%= f.select :maintenance_comp, options_for_select( ["Yes","No"]) ,autofocus: true, class: "form-control" %></td>
 														</tr>
 														<tr>
 															<td>Boat</td>
-															<td><%= f.text_field :maintenance_boat, autofocus: true, class: "form-control" %></td>
+															<td><%= f.select :maintenance_boat, options_for_select( ["Yes","No"]),autofocus: true, class: "form-control" %></td>
 														</tr>
 														<tr>
 															<td>Radio</td>
-															<td><%= f.text_field :maintenance_rad, autofocus: true, class: "form-control" %></td>
+															<td><%= f.select :maintenance_rad, options_for_select( ["Yes","No"]),autofocus: true, class: "form-control" %></td>
 														</tr>
 														<tr>
 															<td colspan = "2"><b>Water availability</b></td>
 														</tr>
 														<tr>
 															<td>Running water</td>
-															<td><%= f.text_field :water_run, autofocus: true, class: "form-control" %></td>
+															<td><%= f.select :water_run, options_for_select( ["Yes","No"]),autofocus: true, class: "form-control" %></td>
 														</tr>
 														<tr>
 															<td>Borehole</td>
-															<td><%= f.text_field :water_borehole, autofocus: true, class: "form-control" %></td>
+															<td><%= f.select :water_borehole, options_for_select( ["Yes","No"]),autofocus: true, class: "form-control" %></td>
 														</tr>
 														<tr>
 															<td>Electricity</td>
-															<td><%= f.text_field :water_elec, autofocus: true, class: "form-control" %></td>
+															<td><%= f.select :water_elec, options_for_select( ["Yes","No"]),autofocus: true, class: "form-control" %></td>
 														</tr>
 														<tr>
 															<td>Solar</td>
-															<td><%= f.text_field :water_solar, autofocus: true, class: "form-control" %></td>
+															<td><%= f.select :water_solar, options_for_select( ["Yes","No"]),autofocus: true, class: "form-control" %></td>
 														</tr>
 														<tr>
 															<td>Torches</td>
-															<td><%= f.text_field :water_torch, autofocus: true, class: "form-control" %></td>
+															<td><%= f.select :water_torch, options_for_select( ["Yes","No"]),autofocus: true, class: "form-control" %></td>
 														</tr>
 														<tr>
 															<td colspan = "2">&nbsp;</td>
@@ -520,7 +523,7 @@
 														</tr>
 														<tr>
 															<td>Waiting home for pregnant Mothers</td>
-															<td><%= f.text_field :preg_shelter, autofocus: true, class: "form-control" %></td>
+															<td><%= f.select :preg_shelter, options_for_select( ["Yes","No"]),autofocus: true, class: "form-control" %></td>
 														</tr>
 														<tr>
 															<td colspan = "2"><b>Monitoring visits</b></td>

@@ -32,9 +32,10 @@ class ReportHealthController < ApplicationController
 
   end
   def mnh
-         
-	 @report = FormHealthMnh.select("SUM(service_del_svd) as service_del_svd, SUM(service_del_ve) AS service_del_ve, 
-	 	SUM(service_del_mart_death) as service_del_mart_death, SUM(service_del_ref_eclampsia) AS service_del_ref_eclampsia,
+	 
+	@report = FormHealthMnh.select("SUM(service_del_svd) as service_del_svd, SUM(service_del_ve) AS service_del_ve, 
+	 	SUM(service_del_mart_death) as service_del_mart_death,SUM(service_del_ref) AS service_del_ref, 
+                SUM(service_del_ref_eclampsia) AS service_del_ref_eclampsia,
 	 	SUM(service_del_ref_labour) as service_del_ref_labour, SUM(service_del_ref_aph) as service_del_ref_aph, 
 	 	SUM(service_del_ref_cs) as service_del_ref_cs, SUM(service_del_ref_other) as service_del_ref_other,
 	 	SUM(service_del_ref_breech) as service_del_ref_breech, SUM(service_del_ref_twins) AS service_del_ref_twins,
@@ -59,29 +60,30 @@ class ReportHealthController < ApplicationController
 	 	SUM(water_borehole) AS water_borehole, SUM(water_elec) AS water_elec, SUM(water_solar) AS water_solar, 
 	 	SUM(water_torch) AS water_torch, SUM(demo_garden) AS demo_garden, SUM(hearth) AS hearth, SUM(preg_shelter) AS preg_shelter, 
 	 	SUM(sup_DHO) AS sup_DHO, SUM(sup_coord) AS sup_coord, SUM(sup_focal) AS sup_focal, SUM(sup_NCA) AS sup_NCA, 
-	 	SUM(sup_zone) AS sup_zone").where("start_date >= ? AND end_date <= ? AND facility = ?", params[:start_date], [:end_date], params[:facility])
+	 	SUM(sup_zone) AS sup_zone").where("start_date >= ? AND end_date <= ? AND facility = ?", params[:start_date], params[:end_date], params[:facility])
 
 
 
 @mnh = @report.first
+
+@report2 = FormHealthMnh.select("maintenance_veh, maintenance_mcycle, maintenance_comp, maintenance_boat, maintenance_rad, water_run, water_borehole, water_elec, water_solar, water_torch, preg_shelter").where("start_date >= ? AND end_date <= ? AND facility = ?", params[:start_date], params[:end_date], params[:facility])
+@mnh2 = @report2.last
+
   end
  def training
-   @report = FormHealthTraining.select("SUM(trn_hundred_percent_license) as trn_hundred_percent_license, SUM(trn_management_systems) AS trn_management_systems, SUM(trn_teaching_materials) AS trn_teaching_materials, SUM(trn_capacity_built) AS trn_capacity_built, SUM(trn_satisfaction_level) AS trn_satisfaction_level, SUM(trn_course_outlines) as trn_course_outlines, SUM(trn_BSC_RM_Curr) AS trn_BSC_RM_Curr, SUM(trn_clinical_asses_tools) as trn_clinical_asses_tools, SUM(trn_tutor_perf_tools) as trn_tutor_perf_tools, SUM(trn_mentor_skills) as trn_mentor_skills, SUM(trn_reduction_unprof_student) as trn_reduction_unprof_student, SUM(trn_tutor_induct_midwife) as trn_tutor_induct_midwife, SUM(trn_strategic_plans) as trn_strategic_plans, SUM(trn_ops_plans) AS trn_ops_plans, SUM(trn_financial_systems) AS trn_financial_systems, SUM(trn_SOPs) as trn_SOPs, SUM(trn_good_governance) as trn_good_governance, SUM(trn_policies) AS trn_policies, SUM(trn_motivated_pupils) as trn_motivated_pupils, SUM(trn_research) AS trn_research, SUM(trn_ntwk_meetings) AS trn_ntwk_meetings, SUM(trn_MOU) as trn_MOU, SUM(trn_monitoring) as trn_monitoring").where("start_date >= ? AND end_date <= ?", params[:start_date], [:end_date])
+   @report = FormHealthTraining.select("SUM(trn_hundred_percent_license) as trn_hundred_percent_license, SUM(trn_management_systems) AS trn_management_systems, SUM(trn_teaching_materials) AS trn_teaching_materials, SUM(trn_capacity_built) AS trn_capacity_built, SUM(trn_satisfaction_level) AS trn_satisfaction_level, SUM(trn_course_outlines) as trn_course_outlines, SUM(trn_BSC_RM_Curr) AS trn_BSC_RM_Curr, SUM(trn_clinical_asses_tools) as trn_clinical_asses_tools, SUM(trn_tutor_perf_tools) as trn_tutor_perf_tools, SUM(trn_mentor_skills) as trn_mentor_skills, SUM(trn_reduction_unprof_student) as trn_reduction_unprof_student, SUM(trn_tutor_induct_midwife) as trn_tutor_induct_midwife, SUM(trn_strategic_plans) as trn_strategic_plans, SUM(trn_ops_plans) AS trn_ops_plans, SUM(trn_financial_systems) AS trn_financial_systems, SUM(trn_SOPs) as trn_SOPs, SUM(trn_good_governance) as trn_good_governance, SUM(trn_policies) AS trn_policies, SUM(trn_motivated_pupils) as trn_motivated_pupils, SUM(trn_research) AS trn_research, SUM(trn_ntwk_meetings) AS trn_ntwk_meetings, SUM(trn_MOU) as trn_MOU, SUM(trn_monitoring) as trn_monitoring").where("start_date >= ? AND end_date <= ?", params[:start_date], params[:end_date])
    @training = @report.first
 end
 def iptt
-@report = FormHealthIptt.select("SUM(iptt_fp_service_providers) as iptt_fp_service_providers, SUM(iptt_active_youth) as iptt_active_youth, SUM(iptt_youth_partcipation) AS iptt_youth_partcipation, SUM(iptt_life_skills) AS iptt_life_skills, SUM(iptt_SRHR_BCC) as iptt_SRHR_BCC, SUM(iptt_leaders_reached) as iptt_leaders_reached, SUM(iptt_trained_service_providers) as iptt_trained_service_providers").where("start_date >= ? AND end_date <= ?", params[:start_date], [:end_date])
+@report = FormHealthIptt.select("SUM(iptt_fp_service_providers) as iptt_fp_service_providers, SUM(iptt_active_youth) as iptt_active_youth, SUM(iptt_youth_partcipation) AS iptt_youth_partcipation, SUM(iptt_life_skills) AS iptt_life_skills, SUM(iptt_SRHR_BCC) as iptt_SRHR_BCC, SUM(iptt_leaders_reached) as iptt_leaders_reached, SUM(iptt_trained_service_providers) as iptt_trained_service_providers").where("start_date >= ? AND end_date <= ?", params[:start_date], params[:end_date])
 @iptt = @report.first
 
 end
 
 def hiv
-@report = FormHealthHiv.select("SUM(hiv_rights_holders) AS hiv_rights_holders,SUM(hiv_lobby_meetings) AS hiv_lobby_meetings,SUM(hiv_women_htc_pmtct) AS  hiv_women_htc_pmtct, SUM(hiv_budget_allocation) AS hiv_budget_allocation, SUM(hiv_rh_receiving_care) AS hiv_rh_receiving_care,SUM(hiv_women_youth_ovc) AS hiv_women_youth_ovc, SUM(hiv_reconstruction) AS hiv_reconstruction, SUM(hiv_people_htc) AS hiv_people_htc,SUM(hiv_child_pss) AS hiv_child_pss").where("start_date >= ? AND end_date <= ?", params[:start_date], [:end_date])
+@report = FormHealthHiv.select("SUM(hiv_rights_holders) AS hiv_rights_holders,SUM(hiv_lobby_meetings) AS hiv_lobby_meetings,SUM(hiv_women_htc_pmtct) AS  hiv_women_htc_pmtct, SUM(hiv_budget_allocation) AS hiv_budget_allocation, SUM(hiv_rh_receiving_care) AS hiv_rh_receiving_care,SUM(hiv_women_youth_ovc) AS hiv_women_youth_ovc, SUM(hiv_reconstruction) AS hiv_reconstruction, SUM(hiv_people_htc) AS hiv_people_htc,SUM(hiv_child_pss) AS hiv_child_pss, SUM(hiv_pychosocial) AS hiv_pychosocial, SUM(hiv_cbccs_constructed) AS hiv_cbccs_constructed, SUM(hiv_cbccs_rehabilitated) as hiv_cbccs_rehabilitated, SUM(hiv_cc_established) AS hiv_cc_established, SUM(hiv_child_cbccs) AS hiv_child_cbccs, SUM(hiv_child_cc) AS hiv_child_cc, SUM(hiv_caregiver_ecd) AS hiv_caregiver_ecd, SUM(hiv_caregiver_icdp) AS hiv_caregiver_icdp, SUM(hiv_star_circle_established) AS hiv_star_circle_established,  SUM(hiv_community_star_circle) AS hiv_community_star_circle, SUM(hiv_child_eid) AS hiv_child_eid, SUM(hiv_viral_load) AS hiv_viral_load, SUM(hiv_resistance) AS hiv_resistance, SUM(hiv_adolescent_life_skills) AS hiv_adolescent_life_skills").where("start_date >= ? AND end_date <= ?", params[:start_date], params[:end_date])
 
 @hiv = @report.first
 end
-
-
-
 
 end
