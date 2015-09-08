@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150813045322) do
+ActiveRecord::Schema.define(version: 20150908095248) do
 
   create_table "docs", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -44,8 +44,10 @@ ActiveRecord::Schema.define(version: 20150813045322) do
     t.integer  "theo_using_advocacy_strategy",   limit: 4
     t.integer  "theo_monit_visit",               limit: 4
     t.integer  "theo_reports_produced",          limit: 4
-    t.datetime "created_at",                               null: false
-    t.datetime "updated_at",                               null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
+    t.string   "theo_church_leader_tot",         limit: 255
+    t.string   "theo_church_joint_declaration",  limit: 255
   end
 
   create_table "form_gender_traffickings", force: :cascade do |t|
@@ -72,17 +74,31 @@ ActiveRecord::Schema.define(version: 20150813045322) do
   create_table "form_health_hivs", force: :cascade do |t|
     t.date     "start_date"
     t.date     "end_date"
-    t.text     "hiv_rights_holders",    limit: 65535
-    t.text     "hiv_lobby_meetings",    limit: 65535
-    t.text     "hiv_women_htc_pmtct",   limit: 65535
-    t.text     "hiv_budget_allocation", limit: 65535
-    t.text     "hiv_rh_receiving_care", limit: 65535
-    t.text     "hiv_women_youth_ovc",   limit: 65535
-    t.text     "hiv_reconstruction",    limit: 65535
-    t.text     "hiv_people_htc",        limit: 65535
-    t.text     "hiv_child_pss",         limit: 65535
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.text     "hiv_rights_holders",          limit: 65535
+    t.text     "hiv_lobby_meetings",          limit: 65535
+    t.text     "hiv_women_htc_pmtct",         limit: 65535
+    t.text     "hiv_budget_allocation",       limit: 65535
+    t.text     "hiv_rh_receiving_care",       limit: 65535
+    t.text     "hiv_women_youth_ovc",         limit: 65535
+    t.text     "hiv_reconstruction",          limit: 65535
+    t.text     "hiv_people_htc",              limit: 65535
+    t.text     "hiv_child_pss",               limit: 65535
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
+    t.string   "hiv_pychosocial",             limit: 255
+    t.string   "hiv_cbccs_constructed",       limit: 255
+    t.string   "hiv_cbccs_rehabilitated",     limit: 255
+    t.string   "hiv_cc_established",          limit: 255
+    t.string   "hiv_child_cbccs",             limit: 255
+    t.string   "hiv_child_cc",                limit: 255
+    t.string   "hiv_caregiver_ecd",           limit: 255
+    t.string   "hiv_caregiver_icdp",          limit: 255
+    t.string   "hiv_star_circle_established", limit: 255
+    t.string   "hiv_community_star_circle",   limit: 255
+    t.string   "hiv_child_eid",               limit: 255
+    t.string   "hiv_viral_load",              limit: 255
+    t.string   "hiv_resistance",              limit: 255
+    t.string   "hiv_adolescent_life_skills",  limit: 255
   end
 
   create_table "form_health_iptts", force: :cascade do |t|
@@ -106,6 +122,7 @@ ActiveRecord::Schema.define(version: 20150813045322) do
     t.text     "service_del_svd",               limit: 65535
     t.text     "service_del_ve",                limit: 65535
     t.text     "service_del_mart_death",        limit: 65535
+    t.string   "service_del_ref",               limit: 255
     t.string   "service_del_ref_eclampsia",     limit: 255
     t.string   "service_del_ref_labour",        limit: 255
     t.string   "service_del_ref_aph",           limit: 255
