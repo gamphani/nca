@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Facility name:</strong>
+  <%= @facility.facility_name %>
+</p>
+
+<p>
+  <strong>Proprieter:</strong>
+  <%= @facility.proprieter %>
+</p>
+
+<p>
+  <strong>District:</strong>
+  <%= @facility.district %>
+</p>
+
+<p>
+  <strong>Cluster:</strong>
+  <%= @facility.cluster %>
+</p>
+
+<%= link_to 'Edit', edit_facility_path(@facility) %> |
+<%= link_to 'Back', facilities_path %>

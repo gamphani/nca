@@ -37,10 +37,10 @@ class ReportHealthController < ApplicationController
 	 	SUM(service_del_mart_death) as service_del_mart_death,SUM(service_del_ref) AS service_del_ref, 
                 SUM(service_del_ref_eclampsia) AS service_del_ref_eclampsia,
 	 	SUM(service_del_ref_labour) as service_del_ref_labour, SUM(service_del_ref_aph) as service_del_ref_aph, 
-	 	SUM(service_del_ref_cs) as service_del_ref_cs, SUM(service_del_ref_other) as service_del_ref_other,
-	 	SUM(service_del_ref_breech) as service_del_ref_breech, SUM(service_del_ref_twins) AS service_del_ref_twins,
+	 	SUM(service_del_ref_cs) as service_del_ref_cs, SUM(service_del_ref_breech) as service_del_ref_breech, 
+                SUM(service_del_ref_twins) AS service_del_ref_twins,
 	 	SUM(nnd_fsb) AS nnd_fsb, SUM(nnd_msb) AS nnd_msb, SUM(nnd_premature) AS nnd_premature, SUM(nnd_lbw) as nnd_lbw,
-	 	SUM(outreach_initial) as outreach_initial, SUM(outreach_subsequent) as outreach_subsequent, SUM(outreach_2nd) AS outreach_2nd,
+	 	SUM(outreach_initial) as outreach_initial, SUM(outreach_2nd) AS outreach_2nd,
 	 	SUM(outreach_3rd) as outreach_3rd, SUM(outreach_4th) AS outreach_4th, SUM(outreach_underfive_initial) as outreach_underfive_initial,
 	 	SUM(outreach_underfive_subsequent) as outreach_underfive_subsequent, SUM(neonates_male) AS neonates_male, 
 	 	SUM(neonates_female) AS neonates_female, SUM(nnd_male) AS nnd_male, 
@@ -81,7 +81,7 @@ def iptt
 end
 
 def hiv
-@report = FormHealthHiv.select("SUM(hiv_rights_holders) AS hiv_rights_holders,SUM(hiv_lobby_meetings) AS hiv_lobby_meetings,SUM(hiv_women_htc_pmtct) AS  hiv_women_htc_pmtct, SUM(hiv_budget_allocation) AS hiv_budget_allocation, SUM(hiv_rh_receiving_care) AS hiv_rh_receiving_care,SUM(hiv_women_youth_ovc) AS hiv_women_youth_ovc, SUM(hiv_reconstruction) AS hiv_reconstruction, SUM(hiv_people_htc) AS hiv_people_htc,SUM(hiv_child_pss) AS hiv_child_pss, SUM(hiv_pychosocial) AS hiv_pychosocial, SUM(hiv_cbccs_constructed) AS hiv_cbccs_constructed, SUM(hiv_cbccs_rehabilitated) as hiv_cbccs_rehabilitated, SUM(hiv_cc_established) AS hiv_cc_established, SUM(hiv_child_cbccs) AS hiv_child_cbccs, SUM(hiv_child_cc) AS hiv_child_cc, SUM(hiv_caregiver_ecd) AS hiv_caregiver_ecd, SUM(hiv_caregiver_icdp) AS hiv_caregiver_icdp, SUM(hiv_star_circle_established) AS hiv_star_circle_established,  SUM(hiv_community_star_circle) AS hiv_community_star_circle, SUM(hiv_child_eid) AS hiv_child_eid, SUM(hiv_viral_load) AS hiv_viral_load, SUM(hiv_resistance) AS hiv_resistance, SUM(hiv_adolescent_life_skills) AS hiv_adolescent_life_skills").where("start_date >= ? AND end_date <= ?", params[:start_date], params[:end_date])
+@report = FormHealthHiv.select("SUM(hiv_rights_holders) AS hiv_rights_holders,SUM(hiv_lobby_meetings) AS hiv_lobby_meetings,SUM(hiv_women_htc_pmtct) AS  hiv_women_htc_pmtct, SUM(hiv_budget_allocation) AS hiv_budget_allocation, SUM(hiv_rh_receiving_care) AS hiv_rh_receiving_care,SUM(hiv_women_youth_ovc) AS hiv_women_youth_ovc, SUM(hiv_reconstruction) AS hiv_reconstruction, SUM(hiv_people_htc) AS hiv_people_htc, SUM(hiv_pychosocial) AS hiv_pychosocial, SUM(hiv_cbccs_constructed) AS hiv_cbccs_constructed, SUM(hiv_cbccs_rehabilitated) as hiv_cbccs_rehabilitated, SUM(hiv_cc_established) AS hiv_cc_established, SUM(hiv_child_cbccs) AS hiv_child_cbccs, SUM(hiv_child_cc) AS hiv_child_cc, SUM(hiv_caregiver_ecd) AS hiv_caregiver_ecd, SUM(hiv_caregiver_icdp) AS hiv_caregiver_icdp, SUM(hiv_star_circle_established) AS hiv_star_circle_established,  SUM(hiv_community_star_circle) AS hiv_community_star_circle, SUM(hiv_child_eid) AS hiv_child_eid, SUM(hiv_viral_load) AS hiv_viral_load, SUM(hiv_resistance) AS hiv_resistance").where("start_date >= ? AND end_date <= ?", params[:start_date], params[:end_date])
 
 @hiv = @report.first
 end

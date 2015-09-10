@@ -187,10 +187,7 @@
 															<td>CS</td>
 															<td><%= f.text_field :service_del_ref_cs, autofocus: true, class: "form-control" %></td>
 														</tr>
-														<tr>
-															<td>Other</td>
-															<td><%= f.text_field :service_del_ref_other, autofocus: true, class: "form-control" %></td>
-														</tr>
+													
 														<td>Breech</td>
 															<td><%= f.text_field :service_del_ref_breech, autofocus: true, class: "form-control" %></td>
 														</tr>
@@ -258,10 +255,11 @@
 															<td>Initial</td>
 															<td><%= f.text_field :outreach_initial, autofocus: true, class: "form-control" %></td>
 														</tr>
+
 														<tr>
-															<td>Subsequent</td>
-															<td><%= f.text_field :outreach_subsequent, autofocus: true, class: "form-control" %></td>
+															<td colspan = "2"><b>Subsequent</b></td>
 														</tr>
+
 														<tr>
 															<td>2<sup>nd</sup></td>
 															<td><%= f.text_field :outreach_2nd, autofocus: true, class: "form-control" %></td>
@@ -285,16 +283,16 @@
 															<td><%= f.text_field :outreach_male, autofocus: true, class: "form-control" %></td>
 														</tr>
 														<tr>
+															<td>Female</td>
+															<td><%= f.text_field :outreach_female, autofocus: true, class: "form-control" %></td>
+														</tr>
+														<tr>
 															<td>Initial</td>
 															<td><%= f.text_field :outreach_underfive_initial, autofocus: true, class: "form-control" %></td>
 														</tr>
 														<tr>
 															<td>Subsequent</td>
 															<td><%= f.text_field :outreach_underfive_subsequent, autofocus: true, class: "form-control" %></td>
-														</tr>
-														<tr>
-															<td>Female</td>
-															<td><%= f.text_field :outreach_female, autofocus: true, class: "form-control" %></td>
 														</tr>
 														<tr>
 															<td colspan = "2"><b>Conduct community mobilization and awareness campaigns on male involvement in MNH issues</b></td>
