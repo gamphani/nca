@@ -11,3 +11,6 @@ require 'csv'
 CSV.foreach(Rails.root.join("db/seeds_data/facilities.csv"), headers: true) do |row|
   Facility.find_or_create_by(facility_name: row[0], proprieter: row[1], district: row[2], cluster: row[3])
 end
+CSV.foreach(Rails.root.join("db/seeds_data/colleges.csv"), headers: true) do |row|
+  College.find_or_create_by(college_name: row[0])
+end
