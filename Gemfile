@@ -20,6 +20,8 @@ gem 'mysql2'
 gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
 gem 'rails_bootstrap_navbar'
+gem 'chartkick'
+gem 'lazy_high_charts'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]

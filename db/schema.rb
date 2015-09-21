@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150910100613) do
+ActiveRecord::Schema.define(version: 20150921094824) do
 
   create_table "colleges", force: :cascade do |t|
     t.string   "college_name", limit: 255
@@ -208,6 +208,183 @@ ActiveRecord::Schema.define(version: 20150910100613) do
     t.datetime "updated_at",                                  null: false
   end
 
+  create_table "form_health_reproductive_health_output_2s", force: :cascade do |t|
+    t.date     "start_date"
+    t.date     "end_date"
+    t.integer  "youth_clubs",                 limit: 4
+    t.integer  "active_clubs",                limit: 4
+    t.integer  "star_cycle_train_m_less_10",  limit: 4
+    t.integer  "star_cycle_train_m_10_14",    limit: 4
+    t.integer  "star_cycle_train_m_15_20",    limit: 4
+    t.integer  "star_cycle_train_m_21_24",    limit: 4
+    t.integer  "star_cycle_train_f_less_10",  limit: 4
+    t.integer  "star_cycle_train_f_10_14",    limit: 4
+    t.integer  "star_cycle_train_f_15_20",    limit: 4
+    t.integer  "star_cycle_train_f_21_24",    limit: 4
+    t.integer  "star_cycle_groups_formed",    limit: 4
+    t.integer  "life_skills_train_m_less_10", limit: 4
+    t.integer  "life_skills_train_m_10_14",   limit: 4
+    t.integer  "life_skills_train_m_15_20",   limit: 4
+    t.integer  "life_skills_train_m_21_24",   limit: 4
+    t.integer  "life_skills_train_f_less_10", limit: 4
+    t.integer  "life_skills_train_f_10_14",   limit: 4
+    t.integer  "life_skills_train_f_15_20",   limit: 4
+    t.integer  "life_skills_train_f_21_24",   limit: 4
+    t.integer  "peer_edu_train_m_less_10",    limit: 4
+    t.integer  "peer_edu_train_m_10_14",      limit: 4
+    t.integer  "peer_edu_train_m_15_20",      limit: 4
+    t.integer  "peer_edu_train_m_21_24",      limit: 4
+    t.integer  "peer_edu_train_f_less_10",    limit: 4
+    t.integer  "peer_edu_train_f_10_14",      limit: 4
+    t.integer  "peer_edu_train_f_15_20",      limit: 4
+    t.integer  "peer_edu_train_f_21_24",      limit: 4
+    t.integer  "youth_centre_rehabilitated",  limit: 4
+    t.integer  "bicycles",                    limit: 4
+    t.integer  "leadership",                  limit: 4
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+  end
+
+  create_table "form_health_reproductive_health_output_fours", force: :cascade do |t|
+    t.date     "start_date"
+    t.date     "end_date"
+    t.string   "comm_dia_leaders_m",     limit: 255
+    t.string   "comm_dia_leaders_f",     limit: 255
+    t.string   "comm_dia_chiefs_m",      limit: 255
+    t.string   "comm_dia_chiefs_f",      limit: 255
+    t.string   "comm_dia_politicians_m", limit: 255
+    t.string   "comm_dia_politicians_f", limit: 255
+    t.string   "srh_leaders_m",          limit: 255
+    t.string   "srh_leaders_f",          limit: 255
+    t.string   "srh_chiefs_m",           limit: 255
+    t.string   "srh_chiefs_f",           limit: 255
+    t.string   "srh_politicians_m",      limit: 255
+    t.string   "srh_politicians_f",      limit: 255
+    t.string   "sgbv_m",                 limit: 255
+    t.string   "sgbv_f",                 limit: 255
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+  end
+
+  create_table "form_health_reproductive_health_output_threes", force: :cascade do |t|
+    t.date     "start_date"
+    t.date     "end_date"
+    t.string   "sens_camp_key_mes_1",       limit: 255
+    t.string   "sens_camp_key_mes_2",       limit: 255
+    t.string   "sens_camp_key_mes_3",       limit: 255
+    t.string   "sens_camp_key_mes_4",       limit: 255
+    t.string   "sens_camp_key_mes_5",       limit: 255
+    t.string   "sens_camp_key_mes_6",       limit: 255
+    t.string   "sens_camp_key_mes_7",       limit: 255
+    t.string   "sens_camp_key_mes_8",       limit: 255
+    t.string   "sens_camp_key_mes_9",       limit: 255
+    t.string   "sens_camp_channel_1",       limit: 255
+    t.string   "sens_camp_channel_2",       limit: 255
+    t.string   "sens_camp_channel_3",       limit: 255
+    t.string   "sens_camp_channel_4",       limit: 255
+    t.string   "sens_camp_channel_5",       limit: 255
+    t.string   "sens_camp_channel_6",       limit: 255
+    t.string   "sens_camp_channel_7",       limit: 255
+    t.string   "sens_camp_channel_8",       limit: 255
+    t.string   "sens_camp_channel_9",       limit: 255
+    t.string   "sens_camp_key_mes_fig_1",   limit: 255
+    t.string   "sens_camp_key_mes_fig_2",   limit: 255
+    t.string   "sens_camp_key_mes_fig_3",   limit: 255
+    t.string   "sens_camp_key_mes_fig_4",   limit: 255
+    t.string   "sens_camp_key_mes_fig_5",   limit: 255
+    t.string   "sens_camp_key_mes_fig_6",   limit: 255
+    t.string   "sens_camp_key_mes_fig_7",   limit: 255
+    t.string   "sens_camp_key_mes_fig_8",   limit: 255
+    t.string   "sens_camp_key_mes_fig_9",   limit: 255
+    t.string   "ad_camp_key_mes_1",         limit: 255
+    t.string   "ad_camp_key_mes_2",         limit: 255
+    t.string   "ad_camp_key_mes_3",         limit: 255
+    t.string   "ad_camp_key_mes_4",         limit: 255
+    t.string   "ad_camp_key_mes_5",         limit: 255
+    t.string   "ad_camp_key_mes_6",         limit: 255
+    t.string   "ad_camp_key_mes_7",         limit: 255
+    t.string   "ad_camp_key_mes_8",         limit: 255
+    t.string   "ad_camp_key_mes_9",         limit: 255
+    t.string   "ad_camp_key_mes_10",        limit: 255
+    t.string   "ad_camp_key_mes_11",        limit: 255
+    t.string   "ad_camp_key_mes_12",        limit: 255
+    t.string   "ad_camp_key_channel_1",     limit: 255
+    t.string   "ad_camp_key_channel_2",     limit: 255
+    t.string   "ad_camp_key_channel_3",     limit: 255
+    t.string   "ad_camp_key_channel_4",     limit: 255
+    t.string   "ad_camp_key_channel_5",     limit: 255
+    t.string   "ad_camp_key_channel_6",     limit: 255
+    t.string   "ad_camp_key_channel_7",     limit: 255
+    t.string   "ad_camp_key_channel_8",     limit: 255
+    t.string   "ad_camp_key_channel_9",     limit: 255
+    t.string   "ad_camp_key_channel_10",    limit: 255
+    t.string   "ad_camp_key_channel_11",    limit: 255
+    t.string   "ad_camp_key_channel_12",    limit: 255
+    t.string   "ad_camp_key_mes_fig_1",     limit: 255
+    t.string   "ad_camp_key_mes_fig_2",     limit: 255
+    t.string   "ad_camp_key_mes_fig_3",     limit: 255
+    t.string   "ad_camp_key_mes_fig_4",     limit: 255
+    t.string   "ad_camp_key_mes_fig_5",     limit: 255
+    t.string   "ad_camp_key_mes_fig_6",     limit: 255
+    t.string   "ad_camp_key_mes_fig_7",     limit: 255
+    t.string   "ad_camp_key_mes_fig_8",     limit: 255
+    t.string   "ad_camp_key_mes_fig_9",     limit: 255
+    t.string   "ad_camp_key_mes_fig_10",    limit: 255
+    t.string   "ad_camp_key_mes_fig_11",    limit: 255
+    t.string   "ad_camp_key_mes_fig_12",    limit: 255
+    t.string   "special_event_days",        limit: 255
+    t.string   "management_of_youth_clubs", limit: 255
+    t.string   "iec_posters",               limit: 255
+    t.string   "iec_10",                    limit: 255
+    t.string   "iec_flyers",                limit: 255
+    t.string   "iec_tshirts",               limit: 255
+    t.string   "iec_10121022",              limit: 255
+    t.string   "jingles",                   limit: 255
+    t.string   "jingles_aired",             limit: 255
+    t.string   "couples",                   limit: 255
+    t.string   "counselors",                limit: 255
+    t.string   "parliament",                limit: 255
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+  end
+
+  create_table "form_health_reproductive_health_output_twos", force: :cascade do |t|
+    t.date     "start_date"
+    t.date     "end_date"
+    t.string   "youth_clubs",                 limit: 255
+    t.string   "active_clubs",                limit: 255
+    t.string   "star_cycle_train_m_less_10",  limit: 255
+    t.string   "star_cycle_train_m_10_14",    limit: 255
+    t.string   "star_cycle_train_m_15_20",    limit: 255
+    t.string   "star_cycle_train_m_21_24",    limit: 255
+    t.string   "star_cycle_train_f_less_10",  limit: 255
+    t.string   "star_cycle_train_f_10_14",    limit: 255
+    t.string   "star_cycle_train_f_15_20",    limit: 255
+    t.string   "star_cycle_train_f_21_24",    limit: 255
+    t.string   "star_cycle_groups_formed",    limit: 255
+    t.string   "life_skills_train_m_less_10", limit: 255
+    t.string   "life_skills_train_m_10_14",   limit: 255
+    t.string   "life_skills_train_m_15_20",   limit: 255
+    t.string   "life_skills_train_m_21_24",   limit: 255
+    t.string   "life_skills_train_f_less_10", limit: 255
+    t.string   "life_skills_train_f_10_14",   limit: 255
+    t.string   "life_skills_train_f_15_20",   limit: 255
+    t.string   "life_skills_train_f_21_24",   limit: 255
+    t.string   "peer_edu_train_m_less_10",    limit: 255
+    t.string   "peer_edu_train_m_10_14",      limit: 255
+    t.string   "peer_edu_train_m_15_20",      limit: 255
+    t.string   "peer_edu_train_m_21_24",      limit: 255
+    t.string   "peer_edu_train_f_less_10",    limit: 255
+    t.string   "peer_edu_train_f_10_14",      limit: 255
+    t.string   "peer_edu_train_f_15_20",      limit: 255
+    t.string   "peer_edu_train_f_21_24",      limit: 255
+    t.string   "youth_centre_rehabilitated",  limit: 255
+    t.string   "bicycles",                    limit: 255
+    t.string   "leadership",                  limit: 255
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
+  end
+
   create_table "form_health_trainings", force: :cascade do |t|
     t.integer  "trn_hundred_percent_license",  limit: 4
     t.integer  "trn_management_systems",       limit: 4
@@ -285,6 +462,43 @@ ActiveRecord::Schema.define(version: 20150910100613) do
   create_table "reports", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "reproductive_health_output_2s", force: :cascade do |t|
+    t.date     "start_date"
+    t.date     "end_date"
+    t.integer  "youth_clubs",                 limit: 4
+    t.integer  "active_clubs",                limit: 4
+    t.integer  "star_cycle_train_m_less_10",  limit: 4
+    t.integer  "star_cycle_train_m_10_14",    limit: 4
+    t.integer  "star_cycle_train_m_15_20",    limit: 4
+    t.integer  "star_cycle_train_m_21_24",    limit: 4
+    t.integer  "star_cycle_train_f_less_10",  limit: 4
+    t.integer  "star_cycle_train_f_10_14",    limit: 4
+    t.integer  "star_cycle_train_f_15_20",    limit: 4
+    t.integer  "star_cycle_train_f_21_24",    limit: 4
+    t.integer  "star_cycle_groups_formed",    limit: 4
+    t.integer  "life_skills_train_m_less_10", limit: 4
+    t.integer  "life_skills_train_m_10_14",   limit: 4
+    t.integer  "life_skills_train_m_15_20",   limit: 4
+    t.integer  "life_skills_train_m_21_24",   limit: 4
+    t.integer  "life_skills_train_f_less_10", limit: 4
+    t.integer  "life_skills_train_f_10_14",   limit: 4
+    t.integer  "life_skills_train_f_15_20",   limit: 4
+    t.integer  "life_skills_train_f_21_24",   limit: 4
+    t.integer  "peer_edu_train_m_less_10",    limit: 4
+    t.integer  "peer_edu_train_m_10_14",      limit: 4
+    t.integer  "peer_edu_train_m_15_20",      limit: 4
+    t.integer  "peer_edu_train_m_21_24",      limit: 4
+    t.integer  "peer_edu_train_f_less_10",    limit: 4
+    t.integer  "peer_edu_train_f_10_14",      limit: 4
+    t.integer  "peer_edu_train_f_15_20",      limit: 4
+    t.integer  "peer_edu_train_f_21_24",      limit: 4
+    t.integer  "youth_centre_rehabilitated",  limit: 4
+    t.integer  "bicycles",                    limit: 4
+    t.integer  "leadership",                  limit: 4
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
   end
 
   create_table "test_mes", force: :cascade do |t|

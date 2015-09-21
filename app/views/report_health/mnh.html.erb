@@ -64,9 +64,10 @@
 		  	<div class="row">
 		  		<div class="col-md-12 panel-warning">
 		  			<div class="content-box-header panel-heading">
-	  					<div class="panel-title ">Health - Report</div>
+	  					<div class="panel-title ">Health - MNH Report for <%= "#{@facility_name}"%></div>
 						
 						<div class="panel-options">
+						    <%="#{@start_date} - #{@end_date}"%>
 							<a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
 							<a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
 						</div>
@@ -157,8 +158,11 @@
 				                  <td><%= @mnh.service_del_ref_twins%></td>
 				                </tr>
 				                
-
-
+<tr>
+	<td colspan="2">
+<%= high_chart("chart1", @chart1) %>
+</td>
+</tr>
 
 
 
@@ -173,6 +177,12 @@
 				                  <td>Female</td>
 				                  <td><%= @mnh.neonates_female%></td>
 				                </tr>
+				                <tr>
+<td colspan="2">
+<%= high_chart("chart2", @chart2) %>
+</td>
+</tr>
+
 				                <tr>
 				                  <td colspan = "2"><b>NNDs</b></td>
 				                </tr>
@@ -206,22 +216,15 @@
 				                  <td>LBW</td>
 				                  <td><%= @mnh.nnd_lbw %></td>
 				                </tr>
+<tr>
+	<td colspan="2">
+<%= high_chart("chart3", @chart3) %>
+</td>
+</tr>
 
 
 
 
-
-
-
-
-
-
-				                
-						<tr>
-				                  <td colspan = "2">&nbsp;</td>
-				                </tr>
-
-						<tr>
 				                  <td colspan = "2"><b>Conduct outreach clinics</b></td>
 				                </tr>
 				                <tr>
@@ -250,6 +253,13 @@
 				                  <td><%= @mnh.outreach_4th %></td>
 				                </tr>
 
+   <tr>
+	<td colspan="2">
+<%= high_chart("chart4", @chart4) %>
+</td>
+</tr>
+
+
 
 						<tr>
 				                  <td colspan = "2"><b>Underfives</b></td>
@@ -271,6 +281,13 @@
 				                  <td>Subsequent</td>
 				                  <td><%= @mnh.outreach_underfive_subsequent%></td>
 				                </tr>
+
+
+   <tr>
+	<td colspan="2">
+<%= high_chart("chart5", @chart5) %>
+</td>
+</tr>
 
 
 

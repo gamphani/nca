@@ -47,6 +47,12 @@ Rails.application.routes.draw do
       post 'form_health/training'
       get 'form_health/iptt'
       post 'form_health/iptt'
+      get 'form_health/reproductive_health_output_two'
+      post 'form_health/reproductive_health_output_two'
+      get 'form_health/reproductive_health_output_three'
+      post 'form_health/reproductive_health_output_three'
+      get 'form_health/reproductive_health_output_four'
+      post 'form_health/reproductive_health_output_four'
       get 'form_health/hiv'
       post 'form_health/hiv'
       get 'form_health/create'
@@ -85,6 +91,12 @@ Rails.application.routes.draw do
       post 'docs/index'
       get 'docs/new'
       post 'docs/new'
+      get 'report_health/reproductive_health_output_two'
+      post 'report_health/reproductive_health_output_two'
+      get 'report_health/reproductive_health_output_three'
+      post 'report_health/reproductive_health_output_three'
+      get 'report_health/reproductive_health_output_four'
+      post 'report_health/reproductive_health_output_four'
     end
 
     unauthenticated do
