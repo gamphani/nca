@@ -1,0 +1,2 @@
+class FormHealthReproductiveHealthOutputFour< ActiveRecord::Base
+end

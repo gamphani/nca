@@ -1,0 +1,410 @@
+		<script>
+			function assignStartDate() {
+				document.getElementById("form_health_reproductive_health_output_two_start_date").value = $("#start_date_picker").val();
+			}
+			function assignEndDate() {
+				document.getElementById("form_health_reproductive_health_output_two_end_date").value = $("#end_date_picker").val();
+			}
+
+		</script>	
+		<div class="page-content">
+			<div class="row">
+				<div class="col-md-2">
+					<div class="sidebar content-box" style="display: block;">
+						<ul class="nav">
+							<!-- Main menu -->
+							<li class="current"><a href="home/index"><i class="glyphicon glyphicon-home"></i>Home</a></li>
+
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									<i class="glyphicon glyphicon-tasks"></i> Data Entry <b class="caret"></b>
+								</a>
+								<!-- Sub menu -->
+								<ul>
+									<li> <%= link_to 'Resource and Finance', forms_new_path %></li>
+									<li><%= link_to 'Gender Justice', form_gender_index_path %></li>
+									<li><%= link_to 'Health', form_health_index_path %></li>
+									<li><%= link_to 'Monitoring and Evaluation', forms_new_path %></li>
+								</ul>
+							</li>
+
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									<i class="glyphicon glyphicon-stats"></i> Reports <b class="caret"></b>
+								</a>
+								<!-- Sub menu -->
+								<ul>
+									<li> <%= link_to 'Resource and Finance', forms_new_path %></li>
+									<li><%= link_to 'Gender Justice', forms_new_path %></li>
+									<li><%= link_to 'Health', report_health_index_path %></li>
+									<li><%= link_to 'Monitoring and Evaluation', forms_new_path %></li>
+								</ul>
+							</li>
+
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									<i class="glyphicon glyphicon-download-alt"></i> Documents <b class="caret"></b>
+								</a>
+								<!-- Sub menu -->
+								<ul>
+									<li> <%= link_to 'View', forms_new_path %></li>
+									<li><%= link_to 'Upload', forms_new_path %></li>
+								</ul>
+							</li>
+
+
+							<li><a href="tables.html"><i class="glyphicon glyphicon-list"></i>Partners</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-10">
+					<div class="row">
+
+					</div>
+
+					<div class="row">
+						<div class="col-md-12 panel-warning">
+							<div class="content-box-header panel-heading">
+								<div class="panel-title ">Data Entry - Reproductive Health</div>
+								
+								<div class="panel-options">
+									<a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
+									<a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
+								</div>
+							</div>
+							<div class="content-box-large box-with-header">
+								
+
+
+
+								<!--form-->
+								
+								<div class="content-box-large">
+									
+									<div class="panel-body">
+
+
+
+
+
+										<%= form_for :form_health_reproductive_health_output_two, :url => { :action => :create }	 do |f| %>
+										
+
+										<!--form action="/forms/create" method="post"-->
+										<fieldset>
+
+
+
+
+
+
+
+											<div class="panel-body">
+
+
+
+
+
+												<%= f.hidden_field :start_date, :value => "1900-01-01"%>
+												<%= f.hidden_field :end_date, :value => "2013-12-31" %>
+												
+
+
+
+												<table class="table table-bordered">
+													<thead>
+														<tr>
+															<th colspan="4">Indicator</th>
+															<th>Value</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td colspan="4">Start Date</td>
+															<td><div class="bfh-datepicker" data-format="y-m-d" data-date="today" id="start_date_picker" onchange="assignStartDate()"></div></td>
+														</tr>
+														<tr>
+															<td colspan="4">End Date</td>
+															<td><div class="bfh-datepicker" data-format="y-m-d" data-date="today" id="end_date_picker" onchange="assignEndDate()"></div></td>
+														</tr>
+														
+
+														<tr>
+															<td colspan = "5">&nbsp;</td>
+														</tr>
+
+														<tr>
+															<td>Number of active youth clubs disaggregated by activity type</td>
+															<td colspan="3">Youth clubs (number mapped)</td>
+															<td><%= f.text_field :youth_clubs, autofocus: true, class: "form-control" %></td>
+														</tr>
+
+														<tr>
+															<td>&nbsp;</td>
+															<td colspan="3">Active clubs (submitting reports)</td>
+															<td><%= f.text_field :active_clubs, autofocus: true, class: "form-control" %></td>
+														</tr>
+														
+
+														<tr>
+															<td>Number of young people participating in youth clubs activity disaggregated by type, gender and age cohort disaggregated</td>
+															<td>STAR circle training</td>
+															<td>Male</td>
+															<td><10</td>
+															<td><%= f.text_field :star_cycle_train_m_less_10, autofocus: true, class: "form-control" %></td>
+														</tr>
+														
+
+														<tr>
+															<td colspan="3">&nbsp;</td>
+															<td>10 to 14</td>
+															<td><%= f.text_field :star_cycle_train_m_10_14, autofocus: true, class: "form-control" %></td>
+														</tr>
+<tr>
+															<td colspan="3">&nbsp;</td>
+															<td>15 to 20</td>
+															<td><%= f.text_field :star_cycle_train_m_15_20, autofocus: true, class: "form-control" %></td>
+														</tr>
+<tr>
+															<td colspan="3">&nbsp;</td>
+															<td>21 to 24</td>
+															<td><%= f.text_field :star_cycle_train_m_21_24, autofocus: true, class: "form-control" %></td>
+														</tr>
+
+
+
+
+
+
+<tr>
+															
+															<td colspan="2">&nbsp;</td>
+															<td>Female</td>
+															<td><10</td>
+															<td><%= f.text_field :star_cycle_train_f_less_10, autofocus: true, class: "form-control" %></td>
+														</tr>
+														
+
+														<tr>
+															<td colspan="3">&nbsp;</td>
+															<td>10 to 14</td>
+															<td><%= f.text_field :star_cycle_train_f_10_14, autofocus: true, class: "form-control" %></td>
+														</tr>
+<tr>
+															<td colspan="3">&nbsp;</td>
+															<td>15 to 20</td>
+															<td><%= f.text_field :star_cycle_train_f_15_20, autofocus: true, class: "form-control" %></td>
+														</tr>
+<tr>
+															<td colspan="3">&nbsp;</td>
+															<td>21 to 24</td>
+															<td><%= f.text_field :star_cycle_train_f_21_24, autofocus: true, class: "form-control" %></td>
+														</tr>
+
+                                                        <tr>
+                                                           <td>&nbsp;</td>
+                                                        	<td colspan="3">STAR circle groups formed</td>
+                                                        	<td><%= f.text_field :star_cycle_groups_formed, autofocus: true, class: "form-control" %></td>
+                                                        </tr>
+
+
+
+
+
+
+														<tr>
+															<td>Number of young people completing a life skills curiculum</td>
+															<td>Life skills training</td>
+															<td>Male</td>
+															<td><10</td>
+															<td><%= f.text_field :life_skills_train_m_less_10, autofocus: true, class: "form-control" %></td>
+														</tr>
+														
+
+														<tr>
+															<td colspan="3">&nbsp;</td>
+															<td>10 to 14</td>
+															<td><%= f.text_field :life_skills_train_m_10_14, autofocus: true, class: "form-control" %></td>
+														</tr>
+<tr>
+															<td colspan="3">&nbsp;</td>
+															<td>15 to 20</td>
+															<td><%= f.text_field :life_skills_train_m_15_20, autofocus: true, class: "form-control" %></td>
+														</tr>
+<tr>
+															<td colspan="3">&nbsp;</td>
+															<td>21 to 24</td>
+															<td><%= f.text_field :life_skills_train_m_21_24, autofocus: true, class: "form-control" %></td>
+														</tr>
+
+
+
+
+
+
+<tr>
+															
+															<td colspan="2">&nbsp;</td>
+															<td>Female</td>
+															<td><10</td>
+															<td><%= f.text_field :life_skills_train_f_less_10, autofocus: true, class: "form-control" %></td>
+														</tr>
+														
+
+														<tr>
+															<td colspan="3">&nbsp;</td>
+															<td>10 to 14</td>
+															<td><%= f.text_field :life_skills_train_f_10_14, autofocus: true, class: "form-control" %></td>
+														</tr>
+<tr>
+															<td colspan="3">&nbsp;</td>
+															<td>15 to 20</td>
+															<td><%= f.text_field :life_skills_train_f_15_20, autofocus: true, class: "form-control" %></td>
+														</tr>
+<tr>
+															<td colspan="3">&nbsp;</td>
+															<td>21 to 24</td>
+															<td><%= f.text_field :life_skills_train_f_21_24, autofocus: true, class: "form-control" %></td>
+														</tr>
+
+
+
+
+														<tr>
+															<td>&nbsp;</td>
+															<td>Peer educators training</td>
+															<td>Male</td>
+															<td><10</td>
+															<td><%= f.text_field :peer_edu_train_m_less_10, autofocus: true, class: "form-control" %></td>
+														</tr>
+														
+
+														<tr>
+															<td colspan="3">&nbsp;</td>
+															<td>10 to 14</td>
+															<td><%= f.text_field :peer_edu_train_m_10_14, autofocus: true, class: "form-control" %></td>
+														</tr>
+<tr>
+															<td colspan="3">&nbsp;</td>
+															<td>15 to 20</td>
+															<td><%= f.text_field :peer_edu_train_m_15_20, autofocus: true, class: "form-control" %></td>
+														</tr>
+<tr>
+															<td colspan="3">&nbsp;</td>
+															<td>21 to 24</td>
+															<td><%= f.text_field :peer_edu_train_m_21_24, autofocus: true, class: "form-control" %></td>
+														</tr>
+
+
+
+
+
+
+<tr>
+															
+															<td colspan="2">&nbsp;</td>
+															<td>Female</td>
+															<td><10</td>
+															<td><%= f.text_field :peer_edu_train_f_less_10, autofocus: true, class: "form-control" %></td>
+														</tr>
+														
+
+														<tr>
+															<td colspan="3">&nbsp;</td>
+															<td>10 to 14</td>
+															<td><%= f.text_field :peer_edu_train_f_10_14, autofocus: true, class: "form-control" %></td>
+														</tr>
+<tr>
+															<td colspan="3">&nbsp;</td>
+															<td>15 to 20</td>
+															<td><%= f.text_field :peer_edu_train_f_15_20, autofocus: true, class: "form-control" %></td>
+														</tr>
+<tr>
+															<td colspan="3">&nbsp;</td>
+															<td>21 to 24</td>
+															<td><%= f.text_field :peer_edu_train_f_21_24, autofocus: true, class: "form-control" %></td>
+														</tr>
+
+
+
+
+														<tr>
+															<td>&nbsp;</td>
+															<td colspan="3">Youth centres rehabilitated</td>
+															<td><%= f.text_field :youth_centre_rehabilitated, autofocus: true, class: "form-control" %></td>
+														</tr>
+
+														<tr>
+															<td>&nbsp;</td>
+															<td colspan="3">No of bicycles provided to young people</td>
+															<td><%= f.text_field :bicycles, autofocus: true, class: "form-control" %></td>
+														</tr>
+
+														<tr>
+															<td>&nbsp;</td>
+															<td colspan="3">Number trained in yourh leadership</td>
+															<td><%= f.text_field :leadership, autofocus: true, class: "form-control" %></td>
+														</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+													</tbody>
+												</table>
+											</div>
+
+
+
+
+											
+										</fieldset>
+										<div>
+											
+											<%= submit_tag "Finish", class:"btn btn-primary" %>
+										</div>
+										<!--/form-->
+										<% end %>
+
+									</div>
+								</div>
+								
+
+
+
+
+								<br /><br />
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<footer>
+			<div class="container">
+				
+				<div class="copy text-center">
+					Copyright 2015 <a href='#'>Compu Networks</a>
+				</div>
+				
+			</div>
+		</footer>
+
