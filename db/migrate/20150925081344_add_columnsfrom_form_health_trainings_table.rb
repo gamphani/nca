@@ -1,0 +1,47 @@
+class AddColumnsfromFormHealthTrainingsTable < ActiveRecord::Migration
+  def change
+    add_column :form_health_trainings, :trn_college, :string
+    add_column :form_health_trainings, :trn_research_tut, :string
+    add_column :form_health_trainings, :trn_management_systems_typ1, :string
+    add_column :form_health_trainings, :trn_management_systems_num1, :string
+    add_column :form_health_trainings, :trn_management_systems_typ2, :string
+    add_column :form_health_trainings, :trn_management_systems_num2, :string
+    add_column :form_health_trainings, :trn_management_systems_typ3, :string
+    add_column :form_health_trainings, :trn_management_systems_num3, :string
+    add_column :form_health_trainings, :trn_teaching_materials_typ1, :string
+    add_column :form_health_trainings, :trn_teaching_materials_num1, :string
+    add_column :form_health_trainings, :trn_teaching_materials_typ2, :string
+    add_column :form_health_trainings, :trn_teaching_materials_num2, :string
+    add_column :form_health_trainings, :trn_teaching_materials_typ3, :string
+    add_column :form_health_trainings, :trn_teaching_materials_num3, :string
+    add_column :form_health_trainings, :trn_capacity_built_typ1, :string
+    add_column :form_health_trainings, :trn_capacity_built_num1, :string
+    add_column :form_health_trainings, :trn_capacity_built_typ2, :string
+    add_column :form_health_trainings, :trn_capacity_built_num2, :string
+    add_column :form_health_trainings, :trn_capacity_built_typ3, :string
+    add_column :form_health_trainings, :trn_capacity_built_num3, :string
+    add_column :form_health_trainings, :trn_course_outlines_typ1, :string
+    add_column :form_health_trainings, :trn_course_outlines_num1, :string
+    add_column :form_health_trainings, :trn_course_outlines_typ2, :string
+    add_column :form_health_trainings, :trn_course_outlines_num2, :string
+    add_column :form_health_trainings, :trn_course_outlines_typ3, :string
+    add_column :form_health_trainings, :trn_course_outlines_num3, :string
+    add_column :form_health_trainings, :trn_course_outlines_typ4, :string
+    add_column :form_health_trainings, :trn_course_outlines_num4, :string
+    add_column :form_health_trainings, :trn_course_outlines_typ5, :string
+    add_column :form_health_trainings, :trn_course_outlines_num5, :string
+    add_column :form_health_trainings, :trn_clinical_asses_tools_typ1, :string
+    add_column :form_health_trainings, :trn_clinical_asses_tools_num1, :string
+    add_column :form_health_trainings, :trn_clinical_asses_tools_typ2, :string
+    add_column :form_health_trainings, :trn_clinical_asses_tools_num2, :string
+    add_column :form_health_trainings, :trn_clinical_asses_tools_typ3, :string
+    add_column :form_health_trainings, :trn_clinical_asses_tools_num3, :string
+    add_column :form_health_trainings, :trn_tutor_perf_tools_utl, :string
+    add_column :form_health_trainings, :trn_SOPs_typ1, :string
+    add_column :form_health_trainings, :trn_SOPs_num1, :string
+    add_column :form_health_trainings, :trn_SOPs_typ2, :string
+    add_column :form_health_trainings, :trn_SOPs_num2, :string
+    add_column :form_health_trainings, :trn_SOPs_typ3, :string
+    add_column :form_health_trainings, :trn_SOPs_num3, :string
+  end
+end

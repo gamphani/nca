@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150921094824) do
+ActiveRecord::Schema.define(version: 20150925081344) do
 
   create_table "colleges", force: :cascade do |t|
     t.string   "college_name", limit: 255
@@ -386,33 +386,69 @@ ActiveRecord::Schema.define(version: 20150921094824) do
   end
 
   create_table "form_health_trainings", force: :cascade do |t|
-    t.integer  "trn_hundred_percent_license",  limit: 4
-    t.integer  "trn_management_systems",       limit: 4
-    t.integer  "trn_teaching_materials",       limit: 4
-    t.integer  "trn_capacity_built",           limit: 4
-    t.integer  "trn_satisfaction_level",       limit: 4
-    t.integer  "trn_course_outlines",          limit: 4
-    t.integer  "trn_BSC_RM_Curr",              limit: 4
-    t.integer  "trn_clinical_asses_tools",     limit: 4
-    t.integer  "trn_tutor_perf_tools",         limit: 4
-    t.integer  "trn_mentor_skills",            limit: 4
-    t.integer  "trn_reduction_unprof_student", limit: 4
-    t.integer  "trn_tutor_induct_midwife",     limit: 4
-    t.integer  "trn_strategic_plans",          limit: 4
-    t.integer  "trn_ops_plans",                limit: 4
-    t.integer  "trn_financial_systems",        limit: 4
-    t.integer  "trn_SOPs",                     limit: 4
-    t.integer  "trn_good_governance",          limit: 4
-    t.integer  "trn_policies",                 limit: 4
-    t.integer  "trn_motivated_pupils",         limit: 4
-    t.integer  "trn_research",                 limit: 4
-    t.integer  "trn_ntwk_meetings",            limit: 4
-    t.integer  "trn_MOU",                      limit: 4
-    t.integer  "trn_monitoring",               limit: 4
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.integer  "trn_hundred_percent_license",   limit: 4
+    t.integer  "trn_satisfaction_level",        limit: 4
+    t.integer  "trn_BSC_RM_Curr",               limit: 4
+    t.integer  "trn_tutor_perf_tools",          limit: 4
+    t.integer  "trn_mentor_skills",             limit: 4
+    t.integer  "trn_reduction_unprof_student",  limit: 4
+    t.integer  "trn_tutor_induct_midwife",      limit: 4
+    t.integer  "trn_strategic_plans",           limit: 4
+    t.integer  "trn_ops_plans",                 limit: 4
+    t.integer  "trn_good_governance",           limit: 4
+    t.integer  "trn_policies",                  limit: 4
+    t.integer  "trn_motivated_pupils",          limit: 4
+    t.integer  "trn_research",                  limit: 4
+    t.integer  "trn_ntwk_meetings",             limit: 4
+    t.integer  "trn_MOU",                       limit: 4
+    t.integer  "trn_monitoring",                limit: 4
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
     t.date     "start_date"
     t.date     "end_date"
+    t.string   "trn_college",                   limit: 255
+    t.string   "trn_research_tut",              limit: 255
+    t.string   "trn_management_systems_typ1",   limit: 255
+    t.string   "trn_management_systems_num1",   limit: 255
+    t.string   "trn_management_systems_typ2",   limit: 255
+    t.string   "trn_management_systems_num2",   limit: 255
+    t.string   "trn_management_systems_typ3",   limit: 255
+    t.string   "trn_management_systems_num3",   limit: 255
+    t.string   "trn_teaching_materials_typ1",   limit: 255
+    t.string   "trn_teaching_materials_num1",   limit: 255
+    t.string   "trn_teaching_materials_typ2",   limit: 255
+    t.string   "trn_teaching_materials_num2",   limit: 255
+    t.string   "trn_teaching_materials_typ3",   limit: 255
+    t.string   "trn_teaching_materials_num3",   limit: 255
+    t.string   "trn_capacity_built_typ1",       limit: 255
+    t.string   "trn_capacity_built_num1",       limit: 255
+    t.string   "trn_capacity_built_typ2",       limit: 255
+    t.string   "trn_capacity_built_num2",       limit: 255
+    t.string   "trn_capacity_built_typ3",       limit: 255
+    t.string   "trn_capacity_built_num3",       limit: 255
+    t.string   "trn_course_outlines_typ1",      limit: 255
+    t.string   "trn_course_outlines_num1",      limit: 255
+    t.string   "trn_course_outlines_typ2",      limit: 255
+    t.string   "trn_course_outlines_num2",      limit: 255
+    t.string   "trn_course_outlines_typ3",      limit: 255
+    t.string   "trn_course_outlines_num3",      limit: 255
+    t.string   "trn_course_outlines_typ4",      limit: 255
+    t.string   "trn_course_outlines_num4",      limit: 255
+    t.string   "trn_course_outlines_typ5",      limit: 255
+    t.string   "trn_course_outlines_num5",      limit: 255
+    t.string   "trn_clinical_asses_tools_typ1", limit: 255
+    t.string   "trn_clinical_asses_tools_num1", limit: 255
+    t.string   "trn_clinical_asses_tools_typ2", limit: 255
+    t.string   "trn_clinical_asses_tools_num2", limit: 255
+    t.string   "trn_clinical_asses_tools_typ3", limit: 255
+    t.string   "trn_clinical_asses_tools_num3", limit: 255
+    t.string   "trn_tutor_perf_tools_utl",      limit: 255
+    t.string   "trn_SOPs_typ1",                 limit: 255
+    t.string   "trn_SOPs_num1",                 limit: 255
+    t.string   "trn_SOPs_typ2",                 limit: 255
+    t.string   "trn_SOPs_num2",                 limit: 255
+    t.string   "trn_SOPs_typ3",                 limit: 255
+    t.string   "trn_SOPs_num3",                 limit: 255
   end
 
   create_table "form_trainings", force: :cascade do |t|
