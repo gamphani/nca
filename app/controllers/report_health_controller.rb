@@ -294,11 +294,124 @@ outreach_underfive_subsequent << report.outreach_underfive_subsequent.to_i rescu
  
   end
  def training
-   @report = FormHealthTraining.select("SUM(trn_hundred_percent_license) as trn_hundred_percent_license, SUM(trn_satisfaction_level) AS trn_satisfaction_level, SUM(trn_BSC_RM_Curr) AS trn_BSC_RM_Curr, SUM(trn_tutor_perf_tools) as trn_tutor_perf_tools, SUM(trn_mentor_skills) as trn_mentor_skills, SUM(trn_reduction_unprof_student) as trn_reduction_unprof_student, SUM(trn_tutor_induct_midwife) as trn_tutor_induct_midwife, SUM(trn_strategic_plans) as trn_strategic_plans, SUM(trn_ops_plans) AS trn_ops_plans, SUM(trn_good_governance) as trn_good_governance, SUM(trn_policies) AS trn_policies, SUM(trn_motivated_pupils) as trn_motivated_pupils, SUM(trn_research) AS trn_research, SUM(trn_ntwk_meetings) AS trn_ntwk_meetings, SUM(trn_MOU) as trn_MOU, SUM(trn_monitoring) as trn_monitoring, SUM(trn_research_tut) AS trn_research_tut, SUM(trn_management_systems_num1) AS trn_management_systems_num1, SUM(trn_management_systems_num2) AS trn_management_systems_num2, SUM(trn_management_systems_num3) AS trn_management_systems_num3,  SUM(trn_teaching_materials_num1) AS trn_teaching_materials_num1, SUM(trn_teaching_materials_num2) AS trn_teaching_materials_num2,  SUM(trn_teaching_materials_num3) AS trn_teaching_materials_num3, SUM(trn_capacity_built_num1) AS trn_capacity_built_num1, SUM(trn_capacity_built_num2) AS trn_capacity_built_num2,  SUM(trn_capacity_built_num3) AS trn_capacity_built_num3,  SUM(trn_course_outlines_num1) AS trn_course_outlines_num1, SUM(trn_course_outlines_num2) AS trn_course_outlines_num2,  SUM(trn_course_outlines_num3) AS trn_course_outlines_num3,  SUM(trn_course_outlines_num4) AS trn_course_outlines_num4,  SUM(trn_course_outlines_num5) AS trn_course_outlines_num5,  SUM(trn_clinical_asses_tools_num1) AS trn_clinical_asses_tools_num1,  SUM(trn_clinical_asses_tools_num2) AS trn_clinical_asses_tools_num2,  SUM(trn_clinical_asses_tools_num3) AS trn_clinical_asses_tools_num3, SUM(trn_SOPs_num1) AS trn_SOPs_num1,  SUM(trn_SOPs_num2) AS trn_SOPs_num2,  SUM(trn_SOPs_num3) AS trn_SOPs_num3").where("start_date >= ? AND end_date <= ?", params[:start_date], params[:end_date])
-   @training = @report.first
-facilities = Hash.new
-FormHealthMnh.where("start_date >= ? AND end_date <= ?", params[:start_date], params[:end_date]).find_each do |f|
-        facilities[f.facility] = Facility.select('facility_name').where('id = ?', f.facility).last.facility_name
+   @training = FormHealthTraining.select("SUM(trn_satisfaction_level) AS trn_satisfaction_level, SUM(trn_BSC_RM_Curr) AS trn_BSC_RM_Curr, SUM(trn_tutor_perf_tools) as trn_tutor_perf_tools, SUM(trn_mentor_skills) as trn_mentor_skills, SUM(trn_tutor_induct_midwife) as trn_tutor_induct_midwife, SUM(trn_good_governance) as trn_good_governance, SUM(trn_motivated_pupils) as trn_motivated_pupils, SUM(trn_research) AS trn_research, SUM(trn_ntwk_meetings) AS trn_ntwk_meetings, SUM(trn_MOU) as trn_MOU, SUM(trn_monitoring) as trn_monitoring, SUM(trn_research_tut) AS trn_research_tut").where("start_date >= ? AND end_date <= ?", params[:start_date], params[:end_date])
+
+   @report = @training.first
+
+  #find percent
+  percents = Hash.new
+  percentages = FormHealthTraining.where("start_date >= ? AND end_date <= ?", params[:start_date], params[:end_date]).find_each do |f|
+    percents[f.trn_college] = f.trn_hundred_percent_license
+  end
+
+  den = percents.length rescue 0
+  cnt = 0
+  percents.each{|k,v| cnt = cnt+1 if v.downcase =='yes'}
+  @hundred_percent = (cnt.to_f/den.to_f)*100 rescue 'undefined'
+
+  #find all agregates
+
+  @systems = Hash.new
+  @teaching_materials = Hash.new
+  @capacities = Hash.new
+  @trn_satisfaction_level = ''
+  @outlines = Hash.new
+  @asses_tools = {}
+  @trn_reduction_unprof_student = ''
+
+  @trn_tutor_perf_tools_utl = ''
+  @trn_strategic_plans = ''
+  @trn_ops_plans = ''
+  @sops = {}
+  @trn_good_governance = ''
+  @policies = {}
+
+  syscount = FormHealthTraining.where("start_date >= ? AND end_date <= ?", params[:start_date], params[:end_date]).find_each do |f|
+    @systems[f.trn_management_systems_typ1] = [] if !@systems.has_key?(f.trn_management_systems_typ1)
+    @systems[f.trn_management_systems_typ2] = [] if !@systems.has_key?(f.trn_management_systems_typ2)
+    @systems[f.trn_management_systems_typ3] = [] if !@systems.has_key?(f.trn_management_systems_typ3)
+
+    @teaching_materials[f.trn_teaching_materials_typ1] = [] if !@teaching_materials.has_key?(f.trn_teaching_materials_typ1)
+    @teaching_materials[f.trn_teaching_materials_typ2] = [] if !@teaching_materials.has_key?(f.trn_teaching_materials_typ2)
+    @teaching_materials[f.trn_teaching_materials_typ3] = [] if !@teaching_materials.has_key?(f.trn_teaching_materials_typ3)
+
+    @capacities[f.trn_capacity_built_typ1] = [] if !@capacities.has_key?(f.trn_capacity_built_typ1)
+    @capacities[f.trn_capacity_built_typ2] = [] if !@capacities.has_key?(f.trn_capacity_built_typ2)
+    @capacities[f.trn_capacity_built_typ3] = [] if !@capacities.has_key?(f.trn_capacity_built_typ3)
+
+    @outlines[f.trn_course_outlines_typ1] = [] if !@outlines.has_key?(f.trn_course_outlines_typ1)
+    @outlines[f.trn_course_outlines_typ2] = [] if !@outlines.has_key?(f.trn_course_outlines_typ2)
+    @outlines[f.trn_course_outlines_typ3] = [] if !@outlines.has_key?(f.trn_course_outlines_typ3)
+    @outlines[f.trn_course_outlines_typ4] = [] if !@outlines.has_key?(f.trn_course_outlines_typ4)
+    @outlines[f.trn_course_outlines_typ5] = [] if !@outlines.has_key?(f.trn_course_outlines_typ5)
+
+    @asses_tools[f.trn_clinical_asses_tools_typ1] = [] if !@asses_tools.has_key?(f.trn_clinical_asses_tools_typ1)
+    @asses_tools[f.trn_clinical_asses_tools_typ2] = [] if !@asses_tools.has_key?(f.trn_clinical_asses_tools_typ2)
+    @asses_tools[f.trn_clinical_asses_tools_typ3] = [] if !@asses_tools.has_key?(f.trn_clinical_asses_tools_typ3)
+
+
+    @systems[f.trn_management_systems_typ1] << f.trn_management_systems_num1.to_i
+    @systems[f.trn_management_systems_typ2] << f.trn_management_systems_num2.to_i
+    @systems[f.trn_management_systems_typ3] << f.trn_management_systems_num3.to_i
+
+    @teaching_materials[f.trn_teaching_materials_typ1] << f.trn_teaching_materials_num1.to_i
+    @teaching_materials[f.trn_teaching_materials_typ2] << f.trn_teaching_materials_num2.to_i
+    @teaching_materials[f.trn_teaching_materials_typ3] << f.trn_teaching_materials_num3.to_i
+
+    @capacities[f.trn_capacity_built_typ1] << f.trn_capacity_built_num1.to_i
+    @capacities[f.trn_capacity_built_typ2] << f.trn_capacity_built_num2.to_i
+    @capacities[f.trn_capacity_built_typ3] << f.trn_capacity_built_num3.to_i
+
+
+    @trn_satisfaction_level = " #{College.select('college_name').where('id = ?', f.trn_college).last.college_name}:#{f.trn_satisfaction_level} "
+
+    @outlines[f.trn_course_outlines_typ1] << f.trn_course_outlines_num1.to_i
+    @outlines[f.trn_course_outlines_typ2] << f.trn_course_outlines_num2.to_i
+    @outlines[f.trn_course_outlines_typ3] << f.trn_course_outlines_num3.to_i
+    @outlines[f.trn_course_outlines_typ4] << f.trn_course_outlines_num4.to_i
+    @outlines[f.trn_course_outlines_typ5] << f.trn_course_outlines_num5.to_i
+
+    @asses_tools[f.trn_clinical_asses_tools_typ1] << f.trn_clinical_asses_tools_num1.to_i
+    @asses_tools[f.trn_clinical_asses_tools_typ2] << f.trn_clinical_asses_tools_num2.to_i
+    @asses_tools[f.trn_clinical_asses_tools_typ3] << f.trn_clinical_asses_tools_num3.to_i
+ 
+    @trn_tutor_perf_tools_utl = " #{College.select('college_name').where('id = ?', f.trn_college).last.college_name}:#{f.trn_tutor_perf_tools_utl} "
+
+    @trn_reduction_unprof_student =  " #{College.select('college_name').where('id = ?', f.trn_college).last.college_name}:#{f.trn_reduction_unprof_student} "
+    @trn_strategic_plans = " #{College.select('college_name').where('id = ?', f.trn_college).last.college_name}:#{f.trn_strategic_plans} "
+    @trn_ops_plans = " #{College.select('college_name').where('id = ?', f.trn_college).last.college_name}:#{f.trn_ops_plans} "
+
+@sops[f.trn_SOPs_typ1] = [] if !@sops.has_key?(f.trn_SOPs_typ1)
+    @sops[f.trn_SOPs_typ2] = [] if !@sops.has_key?(f.trn_SOPs_typ2)
+    @sops[f.trn_SOPs_typ3] = [] if !@sops.has_key?(f.trn_SOPs_typ3)
+
+
+@sops[f.trn_SOPs_typ1] << f.trn_SOPs_num1.to_i
+    @sops[f.trn_SOPs_typ2] << f.trn_SOPs_num2.to_i
+    @sops[f.trn_SOPs_typ3] << f.trn_SOPs_num3.to_i
+
+    @trn_good_governance = " #{College.select('college_name').where('id = ?', f.trn_college).last.college_name}:#{f.trn_good_governance} "
+
+    @policies[f.trn_policy_typ1] = [] if !@policies.has_key?(f.trn_policy_typ1)
+    @policies[f.trn_policy_typ2] = [] if !@policies.has_key?(f.trn_policy_typ2)
+    @policies[f.trn_policy_typ3] = [] if !@policies.has_key?(f.trn_policy_typ3)
+
+
+@policies[f.trn_policy_typ1] << f.trn_policy_num1.to_i
+    @policies[f.trn_policy_typ2] << f.trn_policy_num2.to_i
+    @policies[f.trn_policy_typ3] << f.trn_policy_num3.to_i
+
+
+
+end
+
+
+
+
+
+colleges = Hash.new
+FormHealthTraining.where("start_date >= ? AND end_date <= ?", params[:start_date], params[:end_date]).find_each do |f|
+        colleges[f.trn_college] = College.select('college_name').where('id = ?', f.trn_college).last.college_name
 end
 
 end

@@ -7,7 +7,7 @@
 			}
 			function assignCollege() {
 				var output = $("#selBox").val();
-				document.getElementById("form_health_training_college").value = $("#college_picker").val();
+				document.getElementById("form_health_training_trn_college").value = $("#college_picker").val();
 			}
 
 		</script>	
@@ -111,6 +111,7 @@
 
 												<%= f.hidden_field :start_date, :value => "1900-01-01"%>
 												<%= f.hidden_field :end_date, :value => "2013-12-31" %>
+												<%= f.hidden_field :trn_college, :value => 1%>
 												
 
 
@@ -138,7 +139,7 @@
 																	
 				  						
 				  						
-				  							<div class="bfh-selectbox" data-name="college" data-filter="true" id="college_picker" onchange="assignCollege()">
+				  							<div class="bfh-selectbox" data-name="trn_college" data-filter="true" id="college_picker" onchange="assignCollege()">
 				  							<%@colleges.each do |f| %>
 											  <div data-value=<%=f.id%>><%=f.college_name%></div>
 											  <%end%>
@@ -348,11 +349,30 @@
 </td>
 															<td colspan="2"><%= f.text_area :trn_good_governance, autofocus: true, class: "form-control" %></td>
 														</tr>
+														
+
 														<tr>
-															<td># and type of policies developed/reviewed
-</td>
-															<td colspan="2"><%= f.text_field :trn_policies, autofocus: true, class: "form-control" %></td>
+															<td># and type of policies developed/reviewed</td>
+															<td>Type of policy</td>
+															<td>Number</td>
 														</tr>
+														<tr>
+															<td>&nbsp;</td>
+															<td><%= f.text_field :trn_policy_typ1, autofocus: true, class: "form-control" %></td>
+															<td><%= f.text_field :trn_policy_num1, autofocus: true, class: "form-control" %></td>
+														</tr>
+														<tr>
+															<td>&nbsp;</td>
+															<td><%= f.text_field :trn_policy_typ2, autofocus: true, class: "form-control" %></td>
+															<td><%= f.text_field :trn_policy_num2, autofocus: true, class: "form-control" %></td>
+														</tr>
+														<tr>
+															<td>&nbsp;</td>
+															<td><%= f.text_field :trn_policy_typ3, autofocus: true, class: "form-control" %></td>
+															<td><%= f.text_field :trn_policy_num3, autofocus: true, class: "form-control" %></td>
+														</tr>
+
+
 														
 
 														<tr>

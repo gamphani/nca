@@ -98,120 +98,218 @@
 				                <tr>
 															<td colspan = "2">&nbsp;</td>
 														</tr>
-														<tr>
-															<td>Number of colleges getting 100%pass rate in licensure examinations</td>
-															<td><%= @training.trn_hundred_percent_license %></td>
+														
+														
+				                
+
+<tr>
+															<td>Getting 100% pass rate in licensure examinations</td>
+															<td colspan="2">
+															<%= @hundred_percent %>
+															</td>
 														</tr>
 														<tr>
-															<td>Selected management systems are functional and in place</td>
-															<td><%=@training.trn_management_systems %></td>
+															<td>Functional management Information systems </td>
+															<td>System</td>
+															<td>Number</td>
 														</tr>
+														<%@systems.each do |k,v| %>
+														<tr>
+															<td>&nbsp</td>
+															<td><%= k%></td>
+															<td><%= v.inject(:+)%></td>
+														</tr>
+														<% end %>
+
 														
 														<tr>
-															<td colspan = "2">&nbsp;</td>
+															<td colspan = "3">&nbsp;</td>
 														</tr>
 														<tr>
 															<td>Number and type of teaching and learning materials acquired</td>
-															<td><%= @training.trn_teaching_materials%></td>
+															<td>Material</td>
+
+															<td>Number</td>
 														</tr>
+														<%@teaching_materials.each do |k,v| %>
+														<tr>
+															<td>&nbsp</td>
+															<td><%= k%></td>
+															<td><%= v.inject(:+)%></td>
+														</tr>
+														<% end %>
+
 														<tr>
 															<td>Number of participants whose capacity has been built (M,F)</td>
-															<td><%= @training.trn_capacity_built%></td>
+															<td>Type of capacity</td>
+															<td>Number</td>
 														</tr>
+
+														<%@capacities.each do |k,v| %>
+														<tr>
+															<td>&nbsp</td>
+															<td><%= k%></td>
+															<td><%= v.inject(:+)%></td>
+														</tr>
+														<% end %>
+
 														<tr>
 															<td> Level of sastifaction in Knowledge, skills & attitudes acquired
 </td>
-															<td><%=@training.trn_satisfaction_level%></td>
+															<td colspan="2"><%= @trn_satisfaction_level %></td>
 														</tr>
 														<tr>
 															<td>Number and type of course outlines developed </td>
-															<td><%= @training.trn_course_outlines%></td>
+															<td>Type of course outline</td>
+															<td>Number</td>
+														</tr>
+
+														<%@outlines.each do |k,v| %>
+														<tr>
+															<td>&nbsp</td>
+															<td><%= k%></td>
+															<td><%= v.inject(:+)%></td>
+														</tr>
+														<%end%>														
+													
+															
+														<tr>
+															<td colspan = "3">&nbsp;</td>
 														</tr>
 														<tr>
 															<td>BSc RM curr developed</td>
-															<td><%= @training.trn_BSC_RM_Curr %></td>
+															<td colspan="2"><%= @report.trn_BSC_RM_Curr%></td>
 														</tr>
+<tr>
 														<td>Clinical assessment tools developed</td>
-															<td><%= @training.trn_clinical_asses_tools%></td>
+															<td>Assesment tool</td>
+															<td>Number</td>
 														</tr>
+
+														<%@asses_tools.each do |k,v| %>
+														<tr>
+															<td>&nbsp</td>
+															<td><%= k%></td>
+															<td><%= v.inject(:+)%></td>
+														</tr>
+														<%end%>
+
+														<tr>
+															<td colspan = "3">&nbsp;</td>
+														</tr>
+														<tr>
 														<td>Tutor performance tools developed</td>
-															<td><%= @training.trn_tutor_perf_tools %></td>
+															<td>Number of tools</td>
+															<td>Utilisation</td>
 														</tr>
+														<td>&nbsp;</td>
+															<td><%= @report.trn_tutor_perf_tools %></td>
+															<td><%= @trn_tutor_perf_tools_utl %></td>
+														</tr>
+
 
 
 														<tr>
 															<td>Mentoring skills acquired</td>
-															<td><%= @training.trn_mentor_skills %></td>
+															<td colspan="2"> <%= @report.trn_mentor_skills%> </td>
 														</tr>
 														<tr>
 															<td>% reduction of unprofessionally behaving student Nurses.</td>
-															<td><%= @training.trn_reduction_unprof_student %></td>
+															<td  colspan="2"><%= @trn_reduction_unprof_student %></td>
 														</tr>
 														
 														<tr>
 															<td># of tutors inducted to nursing midwifery education standards</td>
-															<td><%= @training.trn_tutor_induct_midwife %></td>
+															<td  colspan="2"><%= @report.trn_tutor_induct_midwife%></td>
 														</tr>
 														<tr>
-															<td colspan = "2">&nbsp;</td>
+															<td colspan = "3">&nbsp;</td>
 														</tr>
 														<tr>
-															<td> # of colleges with strategic plans</td>
-															<td><%= @training.trn_strategic_plans %></td>
+															<td>Strategic plans available</td>
+															<td  colspan="2"> <%= @trn_strategic_plans %></td>
 														</tr>
 														<tr>
-															<td># colleges with operational plans</td>
-															<td><%= @training.trn_ops_plans %></td>
+															<td>Operational plans available</td>
+															<td colspan="2">
+															<%= @trn_ops_plans %></td>
 														</tr>
-														<tr>
-															<td># of colleges with functional financial systems</td>
-															<td><%= @training.trn_financial_systems%></td>
-														</tr>
+														
 														<tr>
 															<td># and type of SOPs developed/reviewed</td>
-															<td><%= @training.trn_SOPs %></td>
+															<td>Type of SOP</td>
+															<td>Number</td>
 														</tr>
+
+														<%@sops.each do |k,v| %>
 														<tr>
-															<td>level of satisfaction Knowledge, skills & attitudes acquired in material, performance & good governaance
-</td>
-															<td><%= @training.trn_good_governance %></td>
+															<td>&nbsp</td>
+															<td><%= k%></td>
+															<td><%= v.inject(:+)%></td>
 														</tr>
+														<%end%>
+													
+
 														<tr>
-															<td># and type of policies developed/reviewed
+															<td>Level of satisfaction Knowledge, skills & attitudes acquired in material, performance & good governaance
 </td>
-															<td><%= @training.trn_policies %></td>
+															<td colspan="2"><%= @trn_good_governance %></td>
 														</tr>
 														
 
 														<tr>
-															<td>Number of  secondary and primary motivated to become nurses and midwives</td>
-															<td><%= @training.trn_motivated_pupils%></td>
+															<td># and type of policies developed/reviewed</td>
+															<td>Type of Policy</td>
+															<td>Number</td>
+														</tr>
+
+														<%@policies.each do |k,v| %>
+														<tr>
+															<td>&nbsp</td>
+															<td><%= k%></td>
+															<td><%= v.inject(:+)%></td>
+														</tr>
+														<%end%>
+													
+
+
+														
+
+														<tr>
+															<td>Number of  secondary and primary school students motivated to become nurses and midwives</td>
+															<td colspan="2"><%= @report.trn_motivated_pupils%></td>
 														</tr>
 																<tr>
-															<td colspan = "2">&nbsp;</td>
+															<td colspan = "3">&nbsp;</td>
 														</tr>
 												
 														<tr>
-															<td># of research studies conducted
-# of tutors participated in conducting research</td>
-															<td><%= @training.trn_research%></td>
+															<td># of research studies conducted</td>
+															<td  colspan="2"><%= @report.trn_research %></td>
 														</tr>
 														<tr>
-															<td colspan = "2">&nbsp;</td>
+															<td># of tutors participated in conducting research</td>
+															<td  colspan="2"><%= @report.trn_research_tut%></td>
+														</tr>
+														<tr>
+															<td colspan = "3">&nbsp;</td>
 														</tr>
 														<tr>
 															<td>Number of network meetings conducted.</td>
-															<td><%=@training.trn_ntwk_meetings %></td>
+															<td colspan="2"><%= @report.trn_ntwk_meetings %></td>
 														</tr>
 														<tr>
-															<td># of MoU signed and functional between colleges and their teaching hospitals</td>
-															<td><%= @training.trn_MOU %></td>
+															<td># of MoU signed and functional between college and its teaching hospital</td>
+															<td  colspan="2"><%= @report.trn_MOU %></td>
 														</tr>
 														<tr>
 															<td># of joint monitoring visits done</td>
-															<td><%= @training.trn_monitoring	 %></td>
+															<td  colspan="2"><%= @report.trn_monitoring %></td>
 														</tr>
-				                
+
+
+
+
 
 
 
