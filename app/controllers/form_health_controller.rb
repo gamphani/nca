@@ -43,6 +43,10 @@ elsif params.has_key?("form_health_reproductive_health_output_three")
     elsif params.has_key?("form_health_reproductive_health_output_four")
      @form = FormHealthReproductiveHealthOutputFour.new(params[:form_health_reproductive_health_output_four].permit(:start_date, :end_date, :comm_dia_leaders_m, :comm_dia_leaders_f, :comm_dia_chiefs_m, :comm_dia_chiefs_f, :comm_dia_politicians_m, :comm_dia_politicians_f, :srh_leaders_m, :srh_leaders_f, :srh_chiefs_m, :srh_chiefs_f, :srh_politicians_m, :srh_politicians_f, :sgbv_m, :sgbv_f))
      @form.save
+    elsif params.has_key?("form_health_giz")
+     @form = FormHealthGiz.new(params[:form_health_giz].permit(:start_date, :end_date, :giz_interv_mcci_child_rights, :giz_interv_adol_srhr, :giz_teach_srhr, :giz_sch_auth_srhr, :giz_claim_holders, :giz_legal_ins, :giz_duty_bear_srhr, :giz_comm_diag, :giz_adol_sch_hiv, :giz_comm_chan, :giz_iec_mat, :giz_child_prot_work, :giz_comm_mobl, :giz_adol_youth_clb, :giz_dist_hiv_prenv, :giz_srhr_opn_dys, :giz_sympo_alhiv, :giz_teen_club_alhiv, :giz_nut_asses, :giz_adol_asses
+))
+     @form.save
      end
 
      redirect_to '/form_health/index'

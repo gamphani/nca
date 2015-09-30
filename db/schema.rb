@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150930073948) do
+ActiveRecord::Schema.define(version: 20150930095809) do
 
   create_table "colleges", force: :cascade do |t|
     t.string   "college_name", limit: 255
@@ -73,6 +73,33 @@ ActiveRecord::Schema.define(version: 20150930073948) do
     t.string   "trfk_network_initiatives",     limit: 255
     t.string   "trfk_interagency_meet",        limit: 255
     t.string   "trfk_issues_raised",           limit: 255
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+  end
+
+  create_table "form_health_gizs", force: :cascade do |t|
+    t.date     "start_date"
+    t.date     "end_date"
+    t.string   "giz_interv_mcci_child_rights", limit: 255
+    t.string   "giz_interv_adol_srhr",         limit: 255
+    t.string   "giz_teach_srhr",               limit: 255
+    t.string   "giz_sch_auth_srhr",            limit: 255
+    t.string   "giz_claim_holders",            limit: 255
+    t.string   "giz_legal_ins",                limit: 255
+    t.string   "giz_duty_bear_srhr",           limit: 255
+    t.string   "giz_comm_diag",                limit: 255
+    t.string   "giz_adol_sch_hiv",             limit: 255
+    t.string   "giz_comm_chan",                limit: 255
+    t.string   "giz_iec_mat",                  limit: 255
+    t.string   "giz_child_prot_work",          limit: 255
+    t.string   "giz_comm_mobl",                limit: 255
+    t.string   "giz_adol_youth_clb",           limit: 255
+    t.string   "giz_dist_hiv_prenv",           limit: 255
+    t.string   "giz_srhr_opn_dys",             limit: 255
+    t.string   "giz_sympo_alhiv",              limit: 255
+    t.string   "giz_teen_club_alhiv",          limit: 255
+    t.string   "giz_nut_asses",                limit: 255
+    t.string   "giz_adol_asses",               limit: 255
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
   end

@@ -17,7 +17,7 @@ class ReportHealthController < ApplicationController
      	flash[:error] = "Please select a valid facility #{params[:report][:start_date]}"
      end
          #raise params.inspect
-	 @report = FormHealthMnh.all.where("start_date >= ? AND end_date <= ? ", params[:report][:start_date], params[:report][:end_date]).each{}
+	 #@report = FormHealthMnh.all.where("start_date >= ? AND end_date <= ? ", params[:report][:start_date], params[:report][:end_date]).each{}
 	 if params[:report][:report_type] == "1"
 	 	redirect_to :action => 'mnh', :start_date => params[:report][:start_date], :end_date => params[:report][:end_date], :facility => params[:report][:facility]
 	 elsif params[:report][:report_type] == "2"
@@ -30,6 +30,8 @@ class ReportHealthController < ApplicationController
 	 	redirect_to :action => 'reproductive_health_output_three', :start_date => params[:report][:start_date], :end_date => params[:report][:end_date]
 	 elsif params[:report][:report_type] == "6"
 	 	redirect_to :action => 'reproductive_health_output_four', :start_date => params[:report][:start_date], :end_date => params[:report][:end_date]
+	elsif params[:report][:report_type] == "7"
+	 	redirect_to :action => 'giz', :start_date => params[:report][:start_date], :end_date => params[:report][:end_date]
 
      end
 	 #redirect_to '/report_health/mnh'
@@ -451,5 +453,12 @@ def reproductive_health_output_four
         @report = FormHealthReproductiveHealthOutputFour.select("SUM(comm_dia_leaders_m) AS comm_dia_leaders_m, SUM(comm_dia_leaders_f) AS comm_dia_leaders_f, SUM(comm_dia_chiefs_m) AS comm_dia_chiefs_m,SUM(comm_dia_chiefs_f) AS comm_dia_chiefs_f, SUM(comm_dia_politicians_m) AS comm_dia_politicians_m, SUM(comm_dia_politicians_f) AS comm_dia_politicians_f, SUM(srh_leaders_m) AS srh_leaders_m, SUM(srh_leaders_f) AS srh_leaders_f, SUM(srh_chiefs_m) AS srh_chiefs_m, SUM(srh_chiefs_f) AS srh_chiefs_f, SUM(srh_politicians_m) AS  srh_politicians_m, SUM(srh_politicians_f) AS srh_politicians_f, SUM(sgbv_m) AS sgbv_m, SUM(sgbv_f) AS sgbv_f 
 ").where("start_date >= ? AND end_date <= ?", params[:start_date], params[:end_date])
 @form_health_reproductive_health_output_four = @report.first
+end
+
+def giz
+@giz = FormHealthGiz.select("SUM(giz_interv_mcci_child_rights) AS giz_interv_mcci_child_rights, SUM(giz_interv_adol_srhr) AS giz_interv_adol_srhr, SUM(giz_teach_srhr) AS giz_teach_srhr, SUM(giz_sch_auth_srhr) AS giz_sch_auth_srhr, SUM(giz_claim_holders) AS giz_claim_holders, SUM(giz_legal_ins) AS giz_legal_ins, SUM(giz_duty_bear_srhr) AS giz_duty_bear_srhr, SUM(giz_comm_diag) AS giz_comm_diag, SUM(giz_adol_sch_hiv) AS giz_adol_sch_hiv, SUM(giz_comm_chan) AS giz_comm_chan, SUM(giz_iec_mat) AS giz_iec_mat, SUM(giz_child_prot_work) AS giz_child_prot_work, SUM(giz_comm_mobl) AS giz_comm_mobl, SUM(giz_adol_youth_clb) AS giz_adol_youth_clb, SUM(giz_dist_hiv_prenv) AS giz_dist_hiv_prenv, SUM(giz_srhr_opn_dys) AS giz_srhr_opn_dys, SUM(giz_sympo_alhiv) AS giz_sympo_alhiv, SUM(giz_teen_club_alhiv) AS giz_teen_club_alhiv, SUM(giz_nut_asses) AS giz_nut_asses, SUM(giz_adol_asses) AS giz_adol_asses
+").where("start_date >= ? AND end_date <= ?", params[:start_date], params[:end_date])
+@report = @giz.first
+
 end
 end

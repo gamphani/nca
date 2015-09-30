@@ -1,0 +1,225 @@
+<script>
+        
+</script>	
+    <div class="page-content">
+    	<div class="row">
+		  <div class="col-md-2">
+		  	<div class="sidebar content-box" style="display: block;">
+                <ul class="nav">
+                    <!-- Main menu -->
+                    <li class="current"><a href="home/index"><i class="glyphicon glyphicon-home"></i>Home</a></li>
+
+                    <li class="dropdown">
+                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                           <i class="glyphicon glyphicon-tasks"></i> Data Entry <b class="caret"></b>
+                         </a>
+                         <!-- Sub menu -->
+                         <ul>
+                          <li> <%= link_to 'Resource and Finance', forms_new_path %></li>
+                           <li><%= link_to 'Gender Justice', form_gender_index_path %></li>
+                           <li><%= link_to 'Health', form_health_index_path %></li>
+  			   <li><%= link_to 'Monitoring and Evaluation', forms_new_path %></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                           <i class="glyphicon glyphicon-stats"></i> Reports <b class="caret"></b>
+                         </a>
+                         <!-- Sub menu -->
+                         <ul>
+                          <li> <%= link_to 'Resource and Finance', forms_new_path %></li>
+                           <li><%= link_to 'Gender Justice', forms_new_path %></li>
+                           <li><%= link_to 'Health', report_health_index_path %></li>
+  			   <li><%= link_to 'Monitoring and Evaluation', forms_new_path %></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                           <i class="glyphicon glyphicon-download-alt"></i> Documents <b class="caret"></b>
+                         </a>
+                         <!-- Sub menu -->
+                         <ul>
+                          <li> <%= link_to 'View', forms_new_path %></li>
+                           <li><%= link_to 'Upload', forms_new_path %></li>
+                        </ul>
+                    </li>
+
+
+                    <li><a href="tables.html"><i class="glyphicon glyphicon-list"></i>Partners</a></li>
+                </ul>
+             </div>
+		  </div>
+		  <div class="col-md-10">
+		  	<div class="row">
+
+		  	</div>
+
+		  	<div class="row">
+		  		<div class="col-md-12 panel-warning">
+		  			<div class="content-box-header panel-heading">
+	  					<div class="panel-title ">GIZ program - Report</div>
+						
+						<div class="panel-options">
+							<a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
+							<a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
+						</div>
+		  			</div>
+		  			<div class="content-box-large box-with-header">
+			  			
+
+
+
+<!--form-->
+	
+	  					<div class="content-box-large">
+			  				
+			  				<div class="panel-body">
+
+
+
+									<fieldset>
+
+
+
+
+
+
+		  				<div class="panel-body">
+
+
+
+
+
+		  					<table class="table table-bordered">
+				              <tbody>
+				                
+				                <tr>
+															<td colspan = "2">&nbsp;</td>
+														</tr>
+														
+<tr>
+															<td># of interventions done by MCCI in promoting child rights in the private sector.</td>
+															<td><%= @report.giz_interv_mcci_child_rights %></td>
+														</tr>
+														<tr>
+															<td># of interventions identified for investments in adolescent SRHR</td>
+															<td><%= @report.giz_interv_adol_srhr  %></td>
+														</tr>
+														<tr>
+															<td># of teachers sensitized and are scaling up School SRHR interventions.</td>
+															<td><%= @report.giz_teach_srhr  %></td>
+														</tr>
+														<tr>
+															<td># of school authorities who have been mobilized in SRHR, GBV and HIV issues.</td>
+															<td><%= @report.giz_sch_auth_srhr  %></td>
+														</tr>
+														<tr>
+															<td># of claimholders who have knowledge of 3 key Child protection messages</td>
+															<td><%= @report.giz_claim_holders  %></td>
+														</tr>
+														<tr>
+															<td># of policy and legal instruments strengthen child protection</td>
+															<td><%= @report.giz_legal_ins  %></td>
+														</tr>
+														<tr>
+															<td>Number and category of duty bearers with knowlege of Child Protection and SRHR</td>
+															<td><%= @report.giz_duty_bear_srhr  %></td>
+														</tr>
+														<tr>
+															<td># of community diologues conducted</td>
+															<td><%= @report.giz_comm_diag  %></td>
+														</tr>
+														<tr>
+															<td>number of  adolescents in school youth clubs aware  of adolescent HIV, and SRHR and Child Protection</td>
+															<td><%= @report.giz_adol_sch_hiv  %></td>
+														</tr>
+														<tr>
+															<td># of mass communication channels disseminating infortmation about adolescents SRHR                                      </td>
+															<td><%= @report.giz_comm_chan  %></td>
+														</tr>
+														<tr>
+															<td>Number of IEC materials developed</td>
+															<td><%= @report.giz_iec_mat  %></td>
+														</tr>
+														<tr>
+															<td># of child protection workers trained and are conducting trainings in Jols and case management.</td>
+															<td><%= @report.giz_child_prot_work  %></td>
+														</tr>
+														<tr>
+															<td>Communities mobilised and are aware of child protection policies</td>
+															<td><%= @report.giz_comm_mobl  %></td>
+														</tr>
+														<tr>
+															<td># of Adolscents enrolled in youth clubs and are aware of their rights through Jol and children corners</td>
+															<td><%= @report.giz_adol_youth_clb  %></td>
+														</tr>
+														<tr>
+															<td>number of districts  in which implementing stakeholders have a functional targeted HIV prevention treatment service delivery model for adolescents with HIV, most at risk and vulnerable and are woriking as a unit</td>
+															<td><%= @report.giz_dist_hiv_prenv  %></td>
+														</tr>
+														<tr>
+															<td># of SRHR open days conducted in six districts</td>
+															<td><%= @report.giz_srhr_opn_dys  %></td>
+														</tr>
+														<tr>
+															<td>symposium on care ALHIV conducted.</td>
+															<td><%= @report.giz_sympo_alhiv  %></td>
+														</tr>
+														<tr>
+															<td># of teen Clubs for ALHIV established and functional</td>
+															<td><%= @report.giz_teen_club_alhiv  %></td>
+														</tr>
+														<tr>
+															<td># of nutritional assesments for adolescents conducted by community nurses </td>
+															<td><%= @report.giz_nut_asses  %></td>
+														</tr>
+														<tr>
+															<td># of adolescents assesssed nutrtionally by community nurses.</td>
+															<td><%= @report.giz_adol_asses  %></td>
+														</tr>
+
+														
+														<tr>
+															<td colspan = "2">&nbsp;</td>
+														</tr>
+
+														
+
+
+				              </tbody>
+				            </table>
+		  				</div>
+
+
+
+
+								
+									</fieldset>
+
+			  				</div>
+			  			</div>
+	  				
+
+
+
+
+						<br /><br />
+					</div>
+		  		</div>
+		  	</div>
+
+		  </div>
+		</div>
+    </div>
+
+    <footer>
+         <div class="container">
+         
+            <div class="copy text-center">
+               Copyright 2015 <a href='#'>Compu Networks</a>
+            </div>
+            
+         </div>
+      </footer>
