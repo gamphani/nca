@@ -101,6 +101,8 @@ Rails.application.routes.draw do
       post 'report_health/reproductive_health_output_three'
       get 'report_health/reproductive_health_output_four'
       post 'report_health/reproductive_health_output_four'
+      get 'home/index'
+      post 'home/index'
     end
 
     unauthenticated do
