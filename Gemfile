@@ -22,6 +22,8 @@ gem 'therubyracer', :platform=>:ruby
 gem 'rails_bootstrap_navbar'
 gem 'chartkick'
 gem 'lazy_high_charts'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]

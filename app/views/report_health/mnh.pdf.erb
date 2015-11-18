@@ -68,7 +68,7 @@
 						
 						<div class="panel-options">
 						    <%="#{@start_date} - #{@end_date}"%>
-                                                        <%= link_to 'Printable Report (PDF)', report_health_mnh_path(@mnh, format: 'pdf', start_date: @start_date, end_date: @end_date, facility: @facility), :target => '_blank' %>
+                                                        <%= link_to 'Printable Report (PDF)', report_health_mnh_path(@mnh, format: 'pdf'), :target => '_blank' %>
 						</div>
 		  			</div>
 		  			<div class="content-box-large box-with-header">
@@ -284,7 +284,7 @@
 
    <tr>
 	<td colspan="2">
-<%= high_chart("chart5", @chart5) %>
+<%#= high_chart("chart5", @chart5) %>
 </td>
 </tr>
 

@@ -27,8 +27,22 @@ class ReportGenderController < ApplicationController
   end
  
   def trafficking
+      @start_date = params[:start_date]
+      @end_date = params[:end_date]
+     # raise paramas.inspect
+
       @report = FormGenderTrafficking.select("SUM(trfk_cases_reported) AS trfk_cases_reported, SUM(trfk_cases_resolved) AS trfk_cases_resolved, SUM(trfk_percent_reduction) AS trfk_percent_reduction, SUM(trfk_incorporation_in_church) AS trfk_incorporation_in_church, SUM(trfk_outreach) AS trfk_outreach, SUM(trfk_mobile_clinic) AS trfk_mobile_clinic, SUM(trfk_awareness) as trfk_awareness, SUM(trfk_informal_justice) as trfk_informal_justice, SUM(trfk_other_service_providers) as trfk_other_service_providers, SUM(trfk_rescued) as trfk_rescued, SUM(trfk_court_rehabilitated) as trfk_court_rehabilitated, SUM(trfk_network_initiatives) AS trfk_network_initiatives, SUM(trfk_interagency_meet) as trfk_interagency_meet, SUM(trfk_issues_raised) as trfk_issues_raised").where("start_date >= ? AND end_date <= ?", params[:start_date], params[:end_date])
     @trafficking = @report.first
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render :pdf => 'file_name',
+        :template => 'report_gender/trafficking.pdf.erb',
+        :layout => 'pdf.html.erb',
+        :show_as_html => params[:debug].present?
+      end
+    end
+
   end
 
   def theology

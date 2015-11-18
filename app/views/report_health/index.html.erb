@@ -28,17 +28,30 @@
           
           var result_style = document.getElementById('hidden_row').style;
           var tm = document.getElementById('report_report_type').value;
+
+          var result_style_college = document.getElementById('hidden_college').style;
           
           if (document.getElementById('report_picker').value == "1"){
           result_style.display = 'table-row';
         } else {
           result_style.display = 'none';
         }
+
+
+  if (document.getElementById('report_picker').value == "2"){
+          result_style_college.display = 'table-row';
+        } else {
+          result_style_college.display = 'none';
+        }
+
         document.getElementById("report_report_type").value = $("#report_picker").val();
 
         }
         function assignFacility() {
            document.getElementById("report_facility").value = $("#facility_picker").val();
+        }
+        function assignCollege() {
+           document.getElementById("report_college").value = $("#college_picker").val();
         }
 
 </script>
@@ -176,10 +189,30 @@
   <td>
   <select class="form-control" name="facility_picker" id="facility_picker" onClick="assignFacility()">
 
-                        <option value="0">Select type of report</option>
+                        <option value="0">Select Facility</option>
 
                         <%@facilities.each do |f| %>
                         <option value=<%=f.id%>><%=f.facility_name%></option>
+                        
+                        <%end%>
+                
+                      
+    </select>
+                
+  </td>
+</tr>
+
+<tr id="hidden_college" style="display: none;">
+  <td>
+    College
+  </td>
+  <td>
+  <select class="form-control" name="college_picker" id="college_picker" onClick="assignCollege()">
+
+                        <option value="0">All colleges</option>
+
+                        <%@colleges.each do |f| %>
+                        <option value=<%=f.id%>><%=f.college_name%></option>
                         
                         <%end%>
                 

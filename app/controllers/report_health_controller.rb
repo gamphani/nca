@@ -1,6 +1,7 @@
 class ReportHealthController < ApplicationController
   def index
   	@facilities = Facility.all
+        @colleges = College.all
   end
   def generate
   	 if params[:report][:start_date].blank?
@@ -39,6 +40,10 @@ class ReportHealthController < ApplicationController
   end
   def mnh
 	 
+@start_date = params[:start_date]
+@end_date = params[:end_date]
+@facility = params[:facility]
+
 	@report = FormHealthMnh.select("SUM(service_del_svd) as service_del_svd, SUM(service_del_ve) AS service_del_ve, 
 	 	SUM(service_del_mart_death) as service_del_mart_death,SUM(service_del_ref) AS service_del_ref, 
                 SUM(service_del_ref_eclampsia) AS service_del_ref_eclampsia,
@@ -95,8 +100,6 @@ service_del_ref_breech = Array.new(facilities.length)
 service_del_ref_twins = Array.new(facilities.length)
 
 @facility_name = ""
-@start_date = params[:start_date]
-@end_date = params[:end_date]
 
 facilities.each do |k,v|
 	@facility_name = v if k == params[:facility]
@@ -290,6 +293,15 @@ outreach_underfive_subsequent << report.outreach_underfive_subsequent.to_i rescu
    #f.legend(:align => 'center', :verticalAlign => 'top', :y => 75, :x => -50, :layout => 'vertical')
  end
 
+respond_to do |format|
+      format.html
+      format.pdf do
+        render :pdf => 'file_name',
+        :template => 'report_health/mnh.pdf.erb',
+        :layout => 'pdf.html.erb',
+        :show_as_html => params[:debug].present?
+      end
+    end
 
 
 

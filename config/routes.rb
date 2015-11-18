@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'pdfs/trafficking'
+
   resources :test_mes
 
   get 'report_gender/index'
@@ -103,6 +105,8 @@ Rails.application.routes.draw do
       post 'report_health/reproductive_health_output_four'
       get 'home/index'
       post 'home/index'
+      get 'pdfs/trafficking'
+      post 'pdfs/trafficking'
     end
 
     unauthenticated do
